@@ -28,11 +28,7 @@ header {
 main {
   text-align: left;
 }
-#lastUpdated {
-  color: rgb(247, 240, 240);
-  text-align: center;
-  display: block;
-}
+
 footer {
   background-color: rgba(99, 151, 150, 0.906);
   text-align: center;
