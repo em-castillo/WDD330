@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team Assignment 1</title>
+    <meta
+      name="description"
+      content="First week assignment by Emily Castillo in WDD330 at Brigham Young University - Idaho"
+    />
+  </head>
+
+  <body>
+    <h2>Requirement 1</h2>
+    <input id="input1" type="number" />
+    <button id="button1" onclick="printFunction()">Show</button>
+    <div id="div1"></div>
+
+    <h2>Requirement 2</h2>
+    <input id="input2" type="number" />
+    <button id="button2" onclick="function2()">Sum</button>
+    <div id="div2"></div>
+
+    <h2>Requirement 3</h2>
+    <button id="button3" onclick="function3()">+</button>
+    <button id="button4" onclick="function4()">-</button>
+    <button id="button5" onclick="function5()">*</button>
+
+    <p>Total is:</p>
+    <div id="div3"></div>
+
+    <script type="text/javascript">
+      function printFunction() {
+        var input = document.getElementById("input1").value;
+        document.getElementById("div1").innerHTML = "You entered: " + input;
+      }
+
+      function function2() {
+        var input = document.getElementById("input2").value;
+        var sum = 0;
+        var i;
+        for (i = 0; i <= input; i++) {
+          sum = sum + i;
+        }
+        document.getElementById("div2").innerHTML =
+          "The sum of last number entered is: " + sum;
+      }
+
+      function function3() {
+        var input1 = document.getElementById("input1").value;
+        var input2 = document.getElementById("input2").value;
+
+        document.getElementById("div3").innerHTML =
+          parseInt(input1) + parseInt(input2);
+      }
+
+      function function4() {
+        var input1 = document.getElementById("input1").value;
+        var input2 = document.getElementById("input2").value;
+
+        document.getElementById("div3").innerHTML =
+          parseInt(input1) - parseInt(input2);
+      }
+
+      function function5() {
+        var input1 = document.getElementById("input1").value;
+        var input2 = document.getElementById("input2").value;
+
+        document.getElementById("div3").innerHTML =
+          parseInt(input1) * parseInt(input2);
+      }
+    </script>
+  </body>
+</html>

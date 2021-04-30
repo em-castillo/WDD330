@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Write your Story</title>
+
+    <style>
+        textarea {
+            width:800px;
+            height: 250px;
+            background-color: lightblue;
+            padding: 1rem;
+    }
+
+        section {
+            padding: 0.5rem 0.5rem 0.5rem 0;
+
+        }
+    </style>
+  </head>
+
+  <body>
+      <h1>Story Editor</h1>
+      Story Name: <input id="name_input"></input>
+      <!-- section tags require full width of page-->
+      <section>
+        <button onclick="loadStory()">Find and Edit It</button>
+        <button onclick="saveStory()">Save It</button>
+        <button onclick="displayStory()">Display It</button>
+      </section>
+      <textarea id="story_editor" placeholder="Write your story here."></textarea>
+      <section id="story_display"></section>
+    
+      <!-- add javascript at last but before end body so there is no value null -->
+      <script>
+        // if your dealing with an input or textarea use value; 
+        // a section, use innerHTML
+        function loadStory(){
+            var storyName = document.getElementById("name_input").value
+            var storyHTML = localStorage.getItem(storyName)
+            document.getElementById("story_editor").value = storyHTML
+        }
+
+        function saveStory(){
+            var storyName = document.getElementById("name_input").value
+            var storyHTML = document.getElementById("story_editor").value
+            // line bellow stores the story
+            localStorage.setItem(storyName, storyHTML)
+        }
+
+        function displayStory(){
+            var storyHTML = document.getElementById("story_editor").value
+            document.getElementById("story_display").innerHTML = storyHTML
+        }
+    </script>
+  </body>
+</html>
