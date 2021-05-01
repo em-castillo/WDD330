@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WDD330 Notes</title>
+  </head>
+  <body>
+    <h1>Week 2 Notes</h1>
+    <h2>Variables</h2>
+    <p>Const and let are block-scoped</p>
+    <p>
+      Const: variable will not be reassigned to another value (value won’t
+      change)
+    </p>
+    <p>Let: if variable will be assigned to another value</p>
+
+    <h2>Scope</h2>
+    <p>Its value only exists inside the block they are declared</p>
+    <p>Global scope: a variable declared outside a block</p>
+    <p>
+      Local scope: a variable declared inside a block and only available in that
+      block
+    </p>
+
+    <h2>Template Literals</h2>
+    <p>A special type of string</p>
+    <p>“” or ‘’ = ``</p>
+    <p>Ex: ` She said, “It’s me!” `</p>
+    <p>
+      const age = 39;<br />
+      `I will be ${ age + 1 } next year`;<br />
+      << 'I will be 40 next year'
+    </p>
+
+    <h2>Converting</h2>
+    <p>String to number: (or use parseInt/ parseFLoat)</p>
+    <p>
+      Number('23');<br />
+      << 23 <br />
+    </p>
+    <p>Number to string:</p>
+    <p>
+      String(3); <br />
+      << '3' <br />
+    </p>
+
+    <h2>Array</h2>
+    <p>I can assign the length of an array too.</p>
+    <p>
+      avengers.length = 8; <br />
+      << 8 <br />
+    </p>
+
+    <p>
+      avengers <br />
+      << ['Captain America', 'Iron Man', 'Thor', 'Hulk', <br />
+      ➥ 'Hawkeye', 'Black Widow', undefined, undefined]
+    </p>
+
+    <ul>
+      <li>Array.pop(): removes last one</li>
+      <li>Array.shift(): removes first one</li>
+      <li>Array.push(): adds to the end</li>
+      <li>
+        Array.unshift(): adds to the beginning<br />
+        (I can add , & / between words inside the parenthesis method)
+      </li>
+      <li>Array.join(): turns array into a string</li>
+      <li>Array.reverse(): reverses order</li>
+      <li>Array.sort(): sets in alphabetical order</li>
+    </ul>
+
+    <h2>Callback</h2>
+    <p>
+      A callback is a function passed into another function as an argument to be
+      executed later.
+    </p>
+    <p>Examples</p>
+    <p>
+      const message = function() { <br />
+      `console.log("This message is shown after 3 seconds");<br />
+      }<br />
+      setTimeout(message, 3000);<br />
+      Here the message function is a callback
+    </p>
+    <p>Or</p>
+    <p>
+      setTimeout(function() { <br />
+      console.log("This message is shown after 3 seconds");<br />
+      }, 3000); <br />
+      Anonymous callback
+    </p>
+
+    <p>
+      Also, it is used when we need to call the functions in a different order
+      than the one typed.
+    </p>
+  </body>
+</html>
