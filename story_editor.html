@@ -4,21 +4,40 @@
     <title>Write your Story</title>
 
     <style>
-        textarea {
-            width:800px;
-            height: 250px;
-            background-color: lightblue;
-            padding: 1rem;
-    }
+      header,
+      footer {
+        background-color: rgb(243, 208, 167);
+        padding: 0.2rem;
+        text-align: center;
+        padding: 0.5rem 2%;
+        margin: auto;
+        border-radius: 15px;
+      }
 
-        section {
-            padding: 0.5rem 0.5rem 0.5rem 0;
+      body {
+        padding: 0.5rem 2%;
+        margin: auto;
+      }
 
-        }
+      textarea {
+        width:800px;
+        height: 250px;
+        background-color: lightblue;
+        padding: 1rem;
+      }
+
+      section {
+        padding: 0.5rem 0.5rem 0.5rem 0;
+
+      }
     </style>
   </head>
 
   <body>
+    <header>
+      <h1 id="title">WDD 330</h1>
+    </header>
+    
       <h1>Story Editor</h1>
       Story Name: <input id="name_input"></input>
       <!-- section tags require full width of page-->
@@ -30,6 +49,13 @@
       <textarea id="story_editor" placeholder="Write your story here."></textarea>
       <section id="story_display"></section>
     
+      <footer>
+        <p id="copyright">
+          &copy; <span id="actualYear">2021</span> | Emily J. Castillo |
+          <a href="index.html">Home Page</a>
+        </p>
+      </footer>
+
       <!-- add javascript at last but before end body so there is no value null -->
       <script>
         // if your dealing with an input or textarea use value; 

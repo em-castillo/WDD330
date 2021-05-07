@@ -9,9 +9,29 @@
       name="description"
       content="First week assignment by Emily Castillo in WDD330 at Brigham Young University - Idaho"
     />
+    <style>
+      header,
+      footer {
+        background-color: rgb(243, 208, 167);
+        padding: 0.2rem;
+        text-align: center;
+        padding: 0.5rem 2%;
+        margin: auto;
+        border-radius: 15px;
+      }
+
+      body {
+        padding: 0.5rem 2%;
+        margin: auto;
+      }
+    </style>
   </head>
 
   <body>
+    <header>
+      <h1 id="title">WDD 330</h1>
+    </header>
+
     <h2>Requirement 1</h2>
     <input id="input1" type="number" />
     <button id="button1" onclick="printFunction()">Show</button>
@@ -29,6 +49,13 @@
 
     <p>Total is:</p>
     <div id="div3"></div>
+
+    <footer>
+      <p id="copyright">
+        &copy; <span id="actualYear">2021</span> | Emily J. Castillo |
+        <a href="index.html">Home Page</a>
+      </p>
+    </footer>
 
     <script type="text/javascript">
       function printFunction() {
