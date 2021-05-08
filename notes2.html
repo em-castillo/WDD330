@@ -17,6 +17,11 @@
       body {
         padding: 0.5rem 2%;
       }
+
+      p,
+      li {
+        line-height: 1.5rem;
+      }
     </style>
   </head>
 
@@ -93,6 +98,21 @@
       <li>Array.join(): turns array into a string</li>
       <li>Array.reverse(): reverses order</li>
       <li>Array.sort(): sets in alphabetical order</li>
+      <li>
+        Array.prototype.filter()<br />
+        Example: arr.filter(function(item){return operation code});
+      </li>
+      <li>
+        Array.prototype.map(): shows an item, index, or list<br />
+        Example: arr.map(function(item){return operation code});
+      </li>
+      <li>
+        Array.prototype.reduce(): reduce always includes total first because is
+        the result from previous iteration<br />
+        Example: arr.reduce(function (result, item) {return result + item},
+        0);<br />
+        (0 means there is not a result before the array starts).
+      </li>
     </ul>
 
     <h2>Callback</h2>
