@@ -100,7 +100,7 @@
       ];
 
       // Array.prototype.filter()
-      // Example: arr.filter(function(item){return operation});
+      // Example: arr.filter(function(item){return operation code});
       // 1. Filter the list of inventors for those who were born in the 1500's
       const yearBorn = inventors.filter(function (born) {
         return (born.year > 1500) & (born.year < 1600);
@@ -108,7 +108,7 @@
       console.log(yearBorn);
 
       // Array.prototype.map()
-      // Example: arr.map(function(item){return operation});
+      // Example: arr.map(function(item){return operation code});
       // 2. Give us an array of the inventors' first and last names
       const name = inventors.map(function (fullName) {
         return fullName.first + " " + fullName.last;
