@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WDD330 Notes</title>
+
+    <style>
+      header,
+      footer {
+        background-color: rgb(243, 208, 167);
+        padding: 0.2rem;
+        text-align: center;
+        padding: 0.5rem 2%;
+        margin: auto;
+        border-radius: 15px;
+      }
+
+      body {
+        padding: 0.5rem 2%;
+      }
+
+      p {
+        line-height: 1.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="title">WDD 330</h1>
+    </header>
+
+    <h1>Week 3 Notes</h1>
+
+    <h2>Object</h2>
+    <p>
+      - A car has properties like weight and color, and methods like start and
+      stop.<br />
+      - All cars have the same properties, but the property values differ from
+      car to car.<br />
+      - All cars have the same methods, but the methods are performed at
+      different times.<br />
+      - Objects are variables too. But objects can contain many values.<br />
+      Example: <br />
+      var car = {type:"Fiat", model:"500", color:"white"};
+    </p>
+
+    <h3>Object methods: "this"</h3>
+    <p>
+      - Objects are usually created to represent entities of the real world.<br />
+      - Functions that are stored in object properties are called “methods”.<br />
+      - To access the object, a method can use the this keyword.
+    </p>
+    <p>
+      Example:<br />
+      let user = {<br />
+      name: "John",<br />
+      age: 30,<br />
+
+      sayHi() {<br />
+      // "this" is the "current object"<br />
+      alert(this.name);<br />
+      }<br />
+
+      };<br />
+
+      user.sayHi(); // John<br />
+    </p>
+
+    <h3>Object Properties</h3>
+    <p>
+      - The <italic>name:values</italic> pairs in JavaScript objects are called
+      properties.<br />
+      firstName: "John";
+    </p>
+    <p>How to access an Object Property?</p>
+    <p>
+      person.firstName<br />
+      Or<br />
+      person["firstName"]
+    </p>
+
+    <h3>Object Methods</h3>
+    <p>
+      - A method is a function stored as a property.<br />
+      - Methods are actions that can be performed on objects.<br />
+      Example:<br />
+      fullName: function() {return this.firstName + " " + this.lastName;}
+    </p>
+    <p>How to access an Object Method?</p>
+    <p>name = person.fullName();</p>
+
+    <h2>Document Object Model (DOM)</h2>
+    <p>
+      - Can access, change, add, or delete all the elements of an HTML document.
+      <br />
+      - The innerHTML property can be used to insert raw HTML directly into the
+      DOM.<br />
+      - The document.getElementById(), document.getElementsByClassName(),
+      document.getElementsByTagNames() and document.querySelector() can be used
+      to access elements on a page.<br />
+      Example:<br />
+      document.getElementById("demo").innerHTML = "Hello World!";
+    </p>
+
+    <h2>Events</h2>
+    <p>
+      - Link between the web page and user interactions.<br />
+      - HTML events are "things" that happen to HTML elements.<br />
+      - When JavaScript is used in HTML pages, JavaScript can "react" on these
+      events.<br />
+      - An event listener is attached to an element, then invokes a callback
+      function when the event occurs.<br />
+      Example: <br />
+      onclick="this.innerHTML = Date()"<br />
+      Or<br />
+      onclick="displayDate()"
+    </p>
+
+    <footer>
+      <p id="copyright">
+        &copy; <span id="actualYear">2021</span> | Emily J. Castillo |
+        <a href="index.html">Home Page</a>
+      </p>
+    </footer>
+  </body>
+</html>
