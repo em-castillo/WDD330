@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WDD330 Notes</title>
+
+    <style>
+      header,
+      footer {
+        background-color: rgb(243, 208, 167);
+        padding: 0.2rem;
+        text-align: center;
+        padding: 0.5rem 2%;
+        margin: auto;
+        border-radius: 15px;
+      }
+
+      body {
+        padding: 0.5rem 2%;
+      }
+
+      p {
+        line-height: 1.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="title">WDD 330</h1>
+    </header>
+
+    <h1>Week 4 Notes</h1>
+
+    <h2>Forms</h2>
+    <p>
+      - Contains form controls such as input fields, select menus and
+      buttons.<br />
+    </p>
+
+    <h3>Accessing Form Elements</h3>
+
+    <p>
+      Example:<br />
+      const form = document.forms[0]; <br />
+      const form = document.getElementsByTagname('form')[0]; <br />
+
+      - Will return an HTML collection of all the forms on a page <br />
+      - The index indicates the form number to return<br />
+    </p>
+    <p>
+      const [input,button] = form.elements; <br />
+
+      - Will return an HTML collection of all the elements contained within a
+      form. <br />
+    </p>
+
+    <h3>Form Events</h3>
+    <p>
+      Focus:<br />
+      const input = form.elements.searchInput; <br />
+      input.addEventListener('focus', () => alert('focused'), ➥ false);
+    </p>
+    <p>
+      Blur:<br />
+      input.addEventListener('blur', () => alert('blurred'), ➥ false);
+    </p>
+    <p>
+      Change:<br />
+      input.addEventListener('change', () => alert('changed'), ➥ false);
+    </p>
+
+    <h3>Submitting a Form</h3>
+    <p>
+      - Can be used to intercept a form before it’s been submitted.<br />
+
+      Example:<br />
+      const form = document.forms['search']; form.addEventListener ('submit',
+      search, false); <br />
+      function search() { alert(' Form Submitted'); }
+    </p>
+
+    <h3>Form Controls</h3>
+    <ul>
+      <li>
+        Input: fields, including text, passwords, check boxes, radio buttons,
+        and file uploads .
+      </li>
+      <li>Select: menus for drop-down lists of options.</li>
+      <li>Textarea: elements for longer text entry.</li>
+      <li>Button: elements for submitting and resetting forms.</li>
+    </ul>
+
+    <h2>Object-Oriented Programming (OOP)</h2>
+    <p>
+      - Is a way of programming that uses objects that encapsulate their own
+      properties and methods.
+    </p>
+    <ul>
+      <li>
+        Encapsulation: This involves keeping all the programming logic inside an
+        object and making methods available to implement the functionality,
+        without the outside world needing to know how it’s done (like a juicer).
+      </li>
+      <li>
+        Polymorphism: Various objects can share the same method, but also have
+        the ability to override shared methods with a more specific
+        implementation (many fruits juice).
+      </li>
+      <li>
+        Inheritance: We can take an object that already exists and inherit all
+        its properties and methods. We can then improve on its functionality by
+        adding new properties and methods (new juicer version).
+      </li>
+      <li>
+        Classes: Objects are then created as an instance of that class, and
+        inherit all the properties and methods of the class (design of the
+        juicer).
+      </li>
+    </ul>
+
+    <h3>Constructor Functions</h3>
+    <p>- Defines the properties and methods of an object.</p>
+
+    <p>
+      Example:<br />
+      const Dice = function(sides=6){ this.sides = sides;<br />
+      this.roll = function() { <br />
+      return Math.floor(this.sides * Math.random() + 1) } <br />
+      }
+    </p>
+
+    <p>
+      Instant of dice constructor function:<br />
+      const redDice = new Dice();<br />
+      << Dice { sides: 6, roll: [Function] } }
+    </p>
+
+    <h3>ES6 Class Declarations</h3>
+    <p>- Does exactly the same thing as a constructor function.</p>
+
+    <p>
+      Example:<br />
+      class Dice { constructor(sides=6) { this.sides = sides;<br />
+      } <br />
+      roll() {<br />
+      return Math.floor(this.sides * Math.random() + 1) } <br />
+      }
+    </p>
+
+    <h3>Adding Methods to Built-in Objects</h3>
+    <p>
+      - It is possible to add more methods to the prototype of JavaScript’s
+      built-in objects — such as Number, String, and Array — to add more
+      functionality (or monkey-patching).
+    </p>
+
+    <p>
+      Example:<br />
+      Number.prototype.isEven = function() { return this%2 === 0;<br />
+      } <br />
+
+      Number.prototype.isOdd = function() { return this%2 === 1; <br />
+      }
+    </p>
+
+    <h3>Property Attributes and Descriptors</h3>
+    <ul>
+      <li>
+        Value: this is the value of the property and is undefined by default.
+      </li>
+      <li>
+        Writable: this boolean value shows whether a property can be changed or
+        not, and is false by default.
+      </li>
+      <li>
+        Enumerable: this boolean value shows whether a property will show up
+        when the object is displayed in a for in loop, and is false by default.
+      </li>
+      <li>
+        Configurable: this boolean value shows whether you can delete a property
+        or change any of its attributes, and is false by default.
+      </li>
+    </ul>
+    <p>
+      Example:<br />
+      const me = { name: 'DAZ' }; <br />
+      { value: 'DAZ', writable: true, enumerable: true, ➥ configurable: true }
+    </p>
+
+    <h3>Mixins</h3>
+    <p>
+      - Method can be used to add properties and methods from other objects
+      without creating an inheritance chain.
+    </p>
+
+    <p>
+      Example:<br />
+      const a = {};<br />
+      const b = { name: 'JavaScript' }; <br />
+
+      Object.assign(a,b); <br />
+      << { name: 'JavaScript' } <br />
+
+      a.name<br />
+      << 'JavaScript'
+    </p>
+
+    <h2>Modern JavaScript Development</h2>
+    <p>- Uses libraries.</p>
+    <p>
+      DOM Manipulation<br />
+      - Provides all the tools required to manipulate the DOM, but some can be
+      verbose and take several lines of code.
+    </p>
+    <p>
+      JQuery<br />
+      - Easy to extend, supports older browsers, useful methods.
+    </p>
+    <p>
+      Underscore & Lodash<br />
+      - Both provide a large number of utility functions under the namespace _ .
+    </p>
+    <p>
+      ES6 <br />
+      - All code in modules is always in strict mode without the need for 'use
+      strict' and there is no way to opt out of this.<br />
+      - A module has its own global scope, so any variables created in the
+      top-level of a module can only be accessed within that module.<br />
+      - The value of this in the top level of a module is undefined, rather than
+      the global object.<br />
+      - You can’t use HTML-style comments in modules (although this isn’t very
+      common in any JavaScript program these days).
+    </p>
+    <h3>MVC Frameworks</h3>
+    <ul>
+      <li>Models: objects that implement functionality.</li>
+      <li>View: provide a visual representation of the model.</li>
+      <li>
+        Controllers: link models and views together by communicating between
+        them.
+      </li>
+    </ul>
+    <p>
+      Template files can be used to separate view code from JavaScript; they
+      also enable dynamic code and programming logic to be used to generate
+      markup.
+    </p>
+
+    <footer>
+      <p id="copyright">
+        &copy; <span id="actualYear">2021</span> | Emily J. Castillo |
+        <a href="index.html">Home Page</a>
+      </p>
+    </footer>
+  </body>
+</html>
