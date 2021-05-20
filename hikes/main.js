@@ -4,8 +4,8 @@ const hikes = document.querySelector('.hikes');
 
 const hikesList = Hikes.hikesList;
 
-hikesList.forEach(hike => {
-    let hikes = document.createElement('section');
+hikesList.forEach(hikesList => {
+    let hike = document.createElement('section');
     let h2 = document.createElement('h2');
     let image = document.createElement("img");
     let distance = document.createElement("p");
@@ -17,7 +17,7 @@ hikesList.forEach(hike => {
     difficulty.innerHTML = `Date of birth: ${hikesList.difficulty}`;
     
     hikesList.append(h2);
-    hikesList.append(hike);  
+    hikes.append(hike);  
     hikesList.append(image);
     hikesList.append(distance);
     hikesList.append(difficulty);
