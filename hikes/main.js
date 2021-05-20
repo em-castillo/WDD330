@@ -2,7 +2,7 @@ import * as Hikes from './hikes.js';
 
 const hikes = document.querySelector('.hikes');
 
-const hikes = Hikes.hikesList;
+const hike = Hikes.hikesList;
 
 hikesList.forEach(hike => {
     let hikes = document.createElement('section');
