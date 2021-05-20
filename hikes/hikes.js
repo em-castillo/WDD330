@@ -19,3 +19,7 @@ const hikesList = [
         difficulty: "Moderate",
 },
 ];
+
+export default function Hikes(){
+    return hikesList;
+}
