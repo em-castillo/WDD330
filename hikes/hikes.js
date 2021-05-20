@@ -1,4 +1,4 @@
-export const hikesList = [
+const hikesList = [
     {
         name: "Bechler Falls",
         image: "falls.jpg",
@@ -20,6 +20,6 @@ export const hikesList = [
 },
 ];
 
-// export default function Hikes(){
-//     return hikesList;
-// }
+export default function Hikes(){
+    return hikesList;
+}
