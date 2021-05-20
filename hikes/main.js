@@ -1,8 +1,8 @@
-import Hikes from './hikes.js';
+import {hikesList} from './hikes.js';
 
 const hikes = document.querySelector('.hikes');
 
-const hikesList = Hikes();
+// const hikesList = Hikes();
 
 hikesList.forEach(hike => {
     let hikes = document.createElement('section');
@@ -16,7 +16,7 @@ hikesList.forEach(hike => {
     distance.innerHTML = `Distance: ${hikesList.distance}`;
     difficulty.innerHTML = `Date of birth: ${hikesList.difficulty}`;
     
-    // hikesList.append(h2);
+    hikesList.append(h2);
     hikes.append(hike);  
     hikesList.append(image);
     hikesList.append(distance);
