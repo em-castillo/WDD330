@@ -16,10 +16,10 @@ hikesList.forEach(hikesList => {
     distance.innerHTML = `Distance: ${hikesList.distance}`;
     difficulty.innerHTML = `Date of birth: ${hikesList.difficulty}`;
     
-    hikesList.append(h2);
+    hikes.append(h2);
     hikes.append(hike);  
-    hikesList.append(image);
-    hikesList.append(distance);
-    hikesList.append(difficulty);
+    hikes.append(image);
+    hikes.append(distance);
+    hikes.append(difficulty);
 
 })
