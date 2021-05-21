@@ -1,26 +1,31 @@
-import * as Hikes from './hikes.js';
+import hikeData from "./hikes.js";
 
-const hikes = document.querySelector('.hikes');
+const container = document.querySelector(".hikes");
 
-const hikesList = Hikes.hikesList;
+hikeData.forEach((hike) => {
+  let section = document.createElement("section");
+  let h2 = document.createElement("h2");
+  let article = document.createElement("article");
+  let image = document.createElement("img");
+  let distance = document.createElement("p");
+  let difficulty = document.createElement("p");
+  let description = document.createElement("p");
+  let directions = document.createElement("p");
 
-hikesList.forEach(hike => {
-    let section = document.createElement('section');
-    let h2 = document.createElement('h2');
-    let image = document.createElement("img");
-    let distance = document.createElement("p");
-    let difficulty = document.createElement("p");
+  h2.innerHTML = `${hike.name}`;
+  image.setAttribute("src", `${hike.image}`);
+  image.setAttribute("alt", `${hike.alt}`);
+  distance.innerHTML = `Distance: ${hike.distance}`;
+  difficulty.innerHTML = `Difficulty: ${hike.difficulty}`;
+  description.innerHTML = `Description: ${hike.description}`;
+  directions.innerHTML = `Directions: ${hike.directions}`;
 
-    h2.innerHTML = `${hike.name}`;
-    image.setAttribute("src", `${hike.image}`);
-    distance.innerHTML = `Distance: ${hike.distance}`;
-    difficulty.innerHTML = `Date of birth: ${hike.difficulty}`;
-    
-    section.append(h2);
-    hikes.append(section);  
-    section.append(image);
-    section.append(distance);
-    section.append(difficulty);
-
-})
-
+  container.append(section);
+  section.append(h2);
+  section.append(article);
+  article.append(image);
+  article.append(distance);
+  article.append(difficulty);
+  article.append(description);
+  article.append(directions);
+});
