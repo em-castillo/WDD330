@@ -4,7 +4,7 @@ const hikes = document.querySelector('.hikes');
 
 const hikesList = Hikes.hikesList;
 
-hikesList.forEach(hikesList => {
+hikesList.map(hikesList => {
     let hike = document.createElement('section');
     let h2 = document.createElement('h2');
     let image = document.createElement("img");
