@@ -4,7 +4,7 @@ const hikes = document.querySelector('.hikes');
 
 const hikesList = Hikes.hikesList;
 
-hikesList.forEach(hikesList => {
+hikes.forEach(hikesList => {
     let hike = document.createElement('section');
     let h2 = document.createElement('h2');
     let image = document.createElement("img");
@@ -24,10 +24,3 @@ hikesList.forEach(hikesList => {
 
 })
 
-if(hikesList === null) {
-    console.log('no tasks')
-  } else {
-    hikesList.forEach(function(task){
-      console.log(task);
-    });
-  }
