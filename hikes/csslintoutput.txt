@@ -2,3 +2,8 @@
 styles.css
  6:3  ✖  Unexpected duplicate "padding"   declaration-block-no-duplicate-properties
 
+
+
+run in terminal 
+stylelint styles.css  --> name of css file
+
