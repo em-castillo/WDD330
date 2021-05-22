@@ -1,0 +1,4 @@
+
+styles.css
+ 6:3  ✖  Unexpected duplicate "padding"   declaration-block-no-duplicate-properties
+
