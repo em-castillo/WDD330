@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WDD330 Notes</title>
+
+    <style>
+      header,
+      footer {
+        background-color: rgb(243, 208, 167);
+        padding: 0.2rem;
+        text-align: center;
+        padding: 0.5rem 2%;
+        margin: auto;
+        border-radius: 15px;
+      }
+
+      body {
+        padding: 0.5rem 2%;
+      }
+
+      p {
+        line-height: 1.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="title">WDD 330</h1>
+    </header>
+
+    <h1>Week 5 Notes: Testing and Debugging</h1>
+
+    <h2>Strict Mode</h2>
+    <p>
+      - It tells errors in the code.<br />
+      - Add to the first line of a JavaScript file: 'use strict'; <br />
+      - It can also be added inside a function.
+    </p>
+
+    <h3>Linting Tools</h3>
+
+    <p>Like in CSS. Run in terminal: stylelint and add file name.</p>
+
+    <h2>Feature Detection</h2>
+    <p>
+      - Determines browser support.<br />
+      - This is done using an IF statement to check whether an object or method
+      exists before trying to actually call the method.
+    </p>
+    <p>
+      Example:<br />
+      if (window.holoDeck) { <br />
+      virtualReality.activate(); }
+    </p>
+
+    <h2>Debugging in the Browser</h2>
+    <p>
+      - Alert() is similar to console.log().<br />
+      - Use breakpoints. Also works typing “debugger” in the breakpoint desired.
+    </p>
+
+    <h2>Error Objects</h2>
+    <p>- An error object is created when an exception occurs.</p>
+
+    <p>
+      Example:<br />
+      const error = new Error('Oops, something went wrong'); <br />
+      Or a Throw exception: <br />
+      throw new Error('Something has gone badly wrong!');
+    </p>
+
+    <h2>Exception Handling</h2>
+    <h3>Try, Catch, and Finally</h3>
+    <p>
+      function imaginarySquareRoot(number) { <br />
+      'use strict';<br />
+      if (number < 0) { <br />
+      throw new RangeError("You can't find the square root of <br />
+      ➥ negative numbers")<br />
+      }<br />
+      return Math.sqrt(number);<br />
+      };
+      <br />
+      test('square root of 4 is 2', () => {<br />
+      expect(squareRoot(4)).toBe(2);<br />
+      });
+    </p>
+
+    <h2>Tests</h2>
+    <h3>Test-driven Development</h3>
+    <ul>
+      <li>1. Write tests (that initially fail)</li>
+      <li>2. Write code to pass the tests</li>
+      <li>3. Refactor the code</li>
+      <li>4. Test refactored code</li>
+      <li>5. Write more tests for new features</li>
+    </ul>
+
+    <h3>Jest</h3>
+    <ul>
+      <li>Install -g jest.</li>
+      <li>Create a file named ending in .test.js (squareRoot.test.js).</li>
+      <li>Add code.</li>
+      <li>Run in terminal jest -c {}</li>
+    </ul>
+
+    <footer>
+      <p id="copyright">
+        &copy; <span id="actualYear">2021</span> | Emily J. Castillo |
+        <a href="index.html">Home Page</a>
+      </p>
+    </footer>
+  </body>
+</html>
