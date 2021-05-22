@@ -26,10 +26,10 @@ hikeData.forEach((hike) => {
   section.append(h2);
   section.append(article);
   article.append(div1);
-  article.append(image);
+  div1.append(image);
   article.append(div2);
-  article.append(distance);
-  article.append(difficulty);
-  article.append(description);
-  article.append(directions);
+  div2.append(distance);
+  div2.append(difficulty);
+  div2.append(description);
+  div2.append(directions);
 });
