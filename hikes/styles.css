@@ -40,9 +40,4 @@ h2 {
 
 img {
   width: 100%;
-  grid-column: 1/2;
-}
-
-p {
-  grid-column: 2/3;
 }

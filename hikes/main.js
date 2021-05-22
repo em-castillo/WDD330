@@ -6,7 +6,9 @@ hikeData.forEach((hike) => {
   let section = document.createElement("section");
   let h2 = document.createElement("h2");
   let article = document.createElement("article");
+  let div1 = document.createElement("div");
   let image = document.createElement("img");
+  let div2 = document.createElement("div");
   let distance = document.createElement("p");
   let difficulty = document.createElement("p");
   let description = document.createElement("p");
@@ -23,7 +25,9 @@ hikeData.forEach((hike) => {
   container.append(section);
   section.append(h2);
   section.append(article);
+  article.append(div1);
   article.append(image);
+  article.append(div2);
   article.append(distance);
   article.append(difficulty);
   article.append(description);
