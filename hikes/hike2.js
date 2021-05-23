@@ -154,3 +154,9 @@ const hikeList = [
   
     return item;
   }
+
+const myHikes = new Hikes("hikes");
+window.addEventListener("load", () => {
+  myHikes.showHikeList();
+});
+myHikes.hikeList;
