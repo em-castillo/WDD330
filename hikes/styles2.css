@@ -1,0 +1,57 @@
+header,
+footer {
+  background-color: rgb(243, 208, 167);
+  text-align: center;
+  padding: 0.5rem 2%;
+  margin: auto;
+  border-radius: 15px;
+}
+
+body {
+  padding: 0.5rem 2%;
+}
+
+main {
+  margin: 3rem;
+}
+
+main h1 {
+  text-align: center;
+  border-style: solid;
+  border-color: rgb(148, 199, 148);
+  background-color: rgb(207, 228, 188);
+  padding: 1rem;
+}
+
+h2 {
+  text-align: center;
+  border-style: solid;
+  border-color: rgb(231, 220, 118);
+  background-color: rgb(244, 245, 209);
+  padding: 0.5rem;
+}
+
+img {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.light {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.light h2 {
+  width: 100%;
+  flex: 1 0 auto;
+}
+
+.light div {
+  width: 40%;
+  margin-left: 1em;
+  flex: 1 1 auto;
+}
