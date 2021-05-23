@@ -110,7 +110,7 @@ const hikeList = [
   //shows some hike info - creates elements
   function renderOneHikeLight(hike) {
     const item = document.createElement("li");
-    tem.classList.add('light');
+    item.classList.add('light');
     // setting this to make getting the details for a specific hike easier later.
     item.setAttribute('data-name', hike.name);
     item.innerHTML = ` <h2>${hike.name}</h2>
