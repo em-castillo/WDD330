@@ -28,11 +28,16 @@ h2 {
   margin-bottom: 1rem;
 }
 
+ul#tasks {
+  padding-left: 0;
+}
+
 ul li {
   cursor: pointer;
   position: relative;
   list-style-type: none;
   padding: 12px 8px 12px 40px;
+  margin-left: 0;
 
   -webkit-user-select: none;
   -moz-user-select: none;
