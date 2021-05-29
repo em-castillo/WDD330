@@ -1,5 +1,5 @@
 // tasks list form
-const todoList=[];
+const theTodoList=[];
 
 // create a class with ul element
 class todo_class{
@@ -14,34 +14,34 @@ class todo_class{
             alert("Type a task.")}
             else {
                 const todoObject = {
-                    id: todoList.length,
+                    id: theTodoList.length,
                     todoText: input,
                     isCompleted: false,
         }
         //unshift shows recent input at the top
-        todoList.unshift(todoObject); 
+        theTodoList.unshift(todoObject); 
         this.all();
         document.querySelector("#input").value = "";
         }
     }
 
     complete(x) {
-        const selectIndex = todoList.findIndex((item) => item.id == x);
-        console.log(todoList[selectIndex].isCompleted);
-        todoList[selectIndex].isCompleted ==false ? todoList[selectIndex].isCompleted = true : todoList[selectIndex].isCompleted = false;
+        const selectIndex = theTodoList.findIndex((item) => item.id == x);
+        console.log(theTodoList[selectIndex].isCompleted);
+        theTodoList[selectIndex].isCompleted ==false ? theTodoList[selectIndex].isCompleted = true : theTodoList[selectIndex].isCompleted = false;
         this.all();
     }
 
     delete(z){
-        const delIndex = todoList.findIndex((item) => intem.id == z);
-        todoList.splice(delIndex,1);
+        const delIndex = theTodoList.findIndex((item) => intem.id == z);
+        theTodoList.splice(delIndex,1);
         this.all();
     }
 
     all(){
         this.ulElement.innerHTML = "";
 
-        todoList.forEach((object) => {
+        theTodoList.forEach((object) => {
             const liElement = document.createElement("li");
             const delBtn = document.createElement("i");
 
@@ -74,6 +74,7 @@ class todo_class{
 
 // ul connected to the task list
 const listSection = document.querySelector("#tasks");
+
 todoList = new todo_class(listSection);
 
 
