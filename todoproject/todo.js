@@ -70,7 +70,7 @@ class todo_class{
 
 // ul connected to the task list
 const listSection = document.querySelector("#tasks");
-todoList =  new todo_class(listSection);
+todoList = new todo_class(listSection);
 
 
 // task added in input box shows in task list
