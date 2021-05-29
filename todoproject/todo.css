@@ -23,14 +23,21 @@ h2 {
 
 /* tasks list */
 
-ul {
+.list {
   border: 1px solid black;
-  text-decoration: none;
+  margin-bottom: 1rem;
 }
 
 ul li {
+  cursor: pointer;
+  position: relative;
   list-style-type: none;
-  padding: 1.5rem;
+  padding: 12px 8px 12px 40px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 ul li:hover {
@@ -64,6 +71,7 @@ input {
 .addBtn {
   border: 1px solid black;
   padding: 0.25rem 0.5rem;
+  cursor: pointer;
 }
 
 .addBtn:hover {
