@@ -55,7 +55,7 @@ class todo_class{
 
             delBtn.addEventListener("click", function(e) {
                 const deleteId = e.target.getAttribute("data-id");
-                todoList.deleteElement(deleteId);
+                todoList.delete(deleteId);
             })
 
             liElement.addEventListener("click", function(e) {
