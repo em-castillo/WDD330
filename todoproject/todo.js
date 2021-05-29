@@ -10,21 +10,25 @@ class todo_class{
     // add task, stores data from input
     add(){
         const input = document.querySelector("#input").value;
-        const todoItem = {
-            id: todoList.length,
-            todoText: input,
-            isCompleted: false,
+        if (input == ""){
+            alert("Type a task.")}
+            else {
+                const todoObject = {
+                    id: todoList.length,
+                    todoText: input,
+                    isCompleted: false,
         }
         //unshift shows recent input at the top
-        todoList.unshift(todoItem); 
+        todoList.unshift(todoObject); 
         this.all();
         document.querySelector("#input").value = "";
+        }
     }
 
-    complete(x){
+    complete(x) {
         const selectIndex = todoList.findIndex((item) => item.id == x);
         console.log(todoList[selectIndex].isCompleted);
-        todoList[selectIndex].isCompleted ==false ? todoList[selectIndex].isCompleted = true: todoList[selectIndex].isCompleted = false;
+        todoList[selectIndex].isCompleted ==false ? todoList[selectIndex].isCompleted = true : todoList[selectIndex].isCompleted = false;
         this.all();
     }
 
