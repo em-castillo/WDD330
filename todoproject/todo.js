@@ -27,7 +27,7 @@ completedBtn.addEventListener("click", function (event) {
 
 // create a class with ul element
 class todo_class {
-  constructor(item) {
+  constructor(item) { //constructor only with classes
     this.ulElement = item;
   }
 
