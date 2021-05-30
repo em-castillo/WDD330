@@ -72,8 +72,16 @@ class todo_class{
     }
 }
 
-const pendingTasksNumb = document.querySelector(".pending");
-pendingTasksNumb.textContent = theTodoList.length;
+function showTasks(){
+    let getLocalStorageData = localStorage.getItem("New Todo");
+    if(getLocalStorageData == null){
+      theTodoList = [];
+    }else{
+      theTodoList = JSON.parse(getLocalStorageData); 
+    }
+
+    const pendingTasksNumb = document.querySelector(".pending");
+    pendingTasksNumb.textContent = theTodoList.length;
 
 
 // ul connected to the task list
