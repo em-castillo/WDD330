@@ -44,7 +44,7 @@ class todo_class{
         theTodoList.forEach((object) => {
             const liElement = document.createElement("li");
             const delBtn = document.createElement("i");
-
+            
             liElement.innerText = object.todoText;
             liElement.setAttribute("data-id", object.id);
 
@@ -71,6 +71,10 @@ class todo_class{
         })
     }
 }
+
+const pendingTasksNumb = document.querySelector(".pending");
+pendingTasksNumb.textContent = theTodoList.length;
+
 
 // ul connected to the task list
 const listSection = document.querySelector("#tasks");

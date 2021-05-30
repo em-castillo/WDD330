@@ -16,6 +16,27 @@
       <h2>To Dos</h2>
       <div class="list">
         <ul id="tasks"></ul>
+        <div class="filters">
+          <span><span class="pending"></span> tasks left</span>
+          <button
+            class="btn filters__btn filters__btn--all"
+            v-on:click="filterTodos('all')"
+          >
+            All
+          </button>
+          <button
+            class="btn filters__btn filters__btn--complete"
+            v-on:click="filterTodos('complete')"
+          >
+            Active
+          </button>
+          <button
+            class="btn filters__btn filters__btn--incomplete"
+            v-on:click="filterTodos('incomplete')"
+          >
+            Complete
+          </button>
+        </div>
       </div>
       <div id="myDIV" class="header">
         <input type="text" id="input" />
@@ -25,9 +46,13 @@
     <footer>
       <p id="copyright">
         &copy; <span id="actualYear">2021</span> | Emily J. Castillo | Utah |
-        <a id="byu" href="https://www.byui.edu/online">BYUI Online Learning</a>
+        <a href="../index.html">Home Page</a>
       </p>
     </footer>
     <script src="todo.js"></script>
+    <script
+      src="https://kit.fontawesome.com/29ee0bc57e.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -36,6 +36,7 @@ ul li {
   cursor: pointer;
   position: relative;
   list-style-type: none;
+  text-decoration: none;
   padding: 12px 8px 12px 40px;
   margin-left: 0;
 
@@ -81,4 +82,17 @@ input {
 
 .addBtn:hover {
   background-color: aquamarine;
+}
+
+/* delete */
+.far {
+  position: absolute;
+  padding: 12px 16px;
+  right: 0;
+  top: 0;
+}
+
+.far:hover {
+  background-color: cadetblue;
+  color: white;
 }
