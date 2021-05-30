@@ -82,6 +82,7 @@ function showTasks(){
 
     const pendingTasksNumb = document.querySelector(".pending");
     pendingTasksNumb.textContent = theTodoList.length;
+}
 
 
 // ul connected to the task list
