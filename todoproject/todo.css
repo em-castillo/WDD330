@@ -15,17 +15,19 @@ body {
 
 main {
   padding: 1rem;
+  /* background-color: cornsilk; */
 }
 
 h2 {
   text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 /* tasks list */
 
 .list {
-  border: 1px solid black;
-  margin-bottom: 1rem;
+  width: 80%;
+  margin: 0 auto 1rem auto;
 }
 
 ul#tasks {
@@ -47,7 +49,8 @@ ul li {
 }
 
 ul li:hover {
-  background-color: blanchedalmond;
+  background-color: rgb(198, 228, 238);
+  font-size: 18px;
 }
 
 ul li.checked {
@@ -68,20 +71,29 @@ ul li.checked::before {
 }
 
 /* add tasks */
+#myDIV {
+  width: 80%;
+  margin: 0 auto;
+}
 
 input {
   border: 1px solid black;
   padding: 0.4rem 0.5rem;
+  width: 60%;
+  margin-right: 0.5rem;
 }
 
 .addBtn {
   border: 1px solid black;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
 }
 
 .addBtn:hover {
-  background-color: aquamarine;
+  background-color: rgb(108, 176, 179);
+  color: white;
 }
 
 /* delete */
@@ -93,6 +105,6 @@ input {
 }
 
 .far:hover {
-  background-color: cadetblue;
+  background-color: rgb(108, 176, 179);
   color: white;
 }

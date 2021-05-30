@@ -13,25 +13,19 @@
       <h1 id="title">WDD 330</h1>
     </header>
     <main>
-      <h2>To Dos</h2>
+      <h2>To Do</h2>
       <div class="list">
         <ul id="tasks"></ul>
         <div class="filters">
-          <span><span class="pending"></span> tasks left</span>
-          <button class="Btn Btn--link js-filter-btn" data-filter="completed">
-            show completed
-          </button>
-          <button class="Btn Btn--link js-filter-btn" data-filter="active">
-            show active
-          </button>
-          <button class="Btn Btn--link js-filter-btn" data-filter="all">
-            show all
-          </button>
+          <span class="pending"></span>
+          <button class="allBtn">All</button>
+          <button class="activeBtn">Active</button>
+          <button class="completedBtn">Completed</button>
         </div>
       </div>
-      <div id="myDIV" class="header">
-        <input type="text" id="input" />
-        <span class="addBtn" id="add">+</span>
+      <div id="myDIV" class="newTask">
+        <input type="text" id="input" placeholder="Type new task here." />
+        <span class="addBtn" id="add">Add Task</span>
       </div>
     </main>
     <footer>

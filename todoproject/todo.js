@@ -1,113 +1,120 @@
 // tasks list form
-const theTodoList=[];
+const theTodoList = [];
+const allBtn = document.querySelector(".allBtn");
+const activeBtn = document.querySelector(".activeBtn");
+const completedBtn = document.querySelector(".completedBtn");
+const pendingSpan = document.querySelector(".pending");
+
+let filter = "none";
+
+allBtn.addEventListener("click", function (event) {
+  // show everything
+  filter = "none";
+  todoList.all();
+});
+
+activeBtn.addEventListener("click", function (event) {
+  // show active
+  filter = "active";
+  todoList.all();
+});
+
+completedBtn.addEventListener("click", function (event) {
+  // show completed
+  filter = "completed";
+  todoList.all();
+});
 
 // create a class with ul element
-class todo_class{
-    constructor(item){
-        this.ulElement=item;
+class todo_class {
+  constructor(item) {
+    this.ulElement = item;
+  }
+
+  // add task, stores data from input
+  add() {
+    const input = document.querySelector("#input").value;
+    if (input == "") {
+      alert("Type a task.");
+    } else {
+      const todoObject = {
+        id: theTodoList.length,
+        todoText: input,
+        isCompleted: false,
+      };
+      //unshift shows recent input at the top
+      theTodoList.unshift(todoObject);
+      this.all(); //refreshes
+      document.querySelector("#input").value = "";
     }
+  }
 
-    // add task, stores data from input
-    add(){
-        const input = document.querySelector("#input").value;
-        if (input == ""){
-            alert("Type a task.")}
-            else {
-                const todoObject = {
-                    id: theTodoList.length,
-                    todoText: input,
-                    isCompleted: false,
-        }
-        //unshift shows recent input at the top
-        theTodoList.unshift(todoObject); 
-        this.all();
-        document.querySelector("#input").value = "";
-        }
-    }
+  //clicked completed-incompleted
+  complete(taskId) {
+    const selectIndex = theTodoList.findIndex((item) => item.id == taskId);
+    theTodoList[selectIndex].isCompleted == false
+      ? (theTodoList[selectIndex].isCompleted = true)
+      : (theTodoList[selectIndex].isCompleted = false);
+    this.all(); //refreshes
+  }
 
-    complete(x) {
-        const selectIndex = theTodoList.findIndex((item) => item.id == x);
-        console.log(theTodoList[selectIndex].isCompleted);
-        theTodoList[selectIndex].isCompleted ==false ? theTodoList[selectIndex].isCompleted = true : theTodoList[selectIndex].isCompleted = false;
-        this.all();
-    }
+  delete(taskId) {
+    const delIndex = theTodoList.findIndex((item) => item.id == taskId);
+    theTodoList.splice(delIndex, 1); //splice delete one element from the list(index), then how many
+    this.all(); //user sees change(refresh)
+  }
 
-    delete(z){
-        const delIndex = theTodoList.findIndex((item) => intem.id == z);
-        theTodoList.splice(delIndex,1);
-        this.all();
-    }
+  
+  //   Refresh HTML UI
+  all() {
+    this.ulElement.innerHTML = "";
 
-    all(){
-        this.ulElement.innerHTML = "";
+    theTodoList.forEach((object) => {
+      if (filter === "active" && object.isCompleted === true) return;
+      if (filter === "completed" && object.isCompleted === false) return;
+      
+      const liElement = document.createElement("li");
+      const delBtn = document.createElement("i");
 
-        theTodoList.forEach((object) => {
-            const liElement = document.createElement("li");
-            const delBtn = document.createElement("i");
-            
-            liElement.innerText = object.todoText;
-            liElement.setAttribute("data-id", object.id);
+      liElement.innerText = object.todoText;
+      liElement.setAttribute("data-id", object.id);
 
-            delBtn.setAttribute("data-id", object.id);
-            delBtn.classList.add("far", "fa-trash-alt");
+      delBtn.setAttribute("data-id", object.id);
+      delBtn.classList.add("far", "fa-trash-alt");
 
-            liElement.appendChild(delBtn);
+      liElement.appendChild(delBtn);
 
-            delBtn.addEventListener("click", function(e) {
-                const deleteId = e.target.getAttribute("data-id");
-                todoList.delete(deleteId);
-            })
+      delBtn.addEventListener("click", function (event) {
+        // events depends of users
+        const deleteId = event.target.getAttribute("data-id"); //target is delBtn
+        todoList.delete(deleteId);
+      });
 
-            liElement.addEventListener("click", function(e) {
-                const selectId = e.target.getAttribute("data-id");
-                todoList.complete(selectId);
-            })
+      liElement.addEventListener("click", function (event) {
+        const selectId = event.target.getAttribute("data-id");
+        todoList.complete(selectId);
+      });
 
-            if (object.isCompleted) {
-                liElement.classList.add("checked");
-            }
-
-            this.ulElement.appendChild(liElement);
-        })
-    }
-}
-
-function showTasks(){
-    let getLocalStorageData = localStorage.getItem("New Todo");
-    if(getLocalStorageData == null){
-      theTodoList = [];
-    }else{
-      theTodoList = JSON.parse(getLocalStorageData); 
-    }
-
-    const pendingTasksNumb = document.querySelector(".pending");
-    pendingTasksNumb.textContent = theTodoList.length;
-}
-
-$FilterBtnCollection.forEach($filterBtn => {
-    $filterBtn.addEventListener('click', (event) => {
-      const filter = event.target.dataset.filter || 'all';
-      removeAllChildNodesFrom($todosList);
-      switch(filter) {
-        case 'completed':
-          filterList(todos, todosFragment, (todo) => todo.complete);
-          break;
-        case 'active':
-          filterList(todos, todosFragment, (todo) => !todo.complete);
-          break;
-        default:
-          filterList(todos, todosFragment, (todo) => todo);
+      if (object.isCompleted) {
+        liElement.classList.add("checked");
       }
+
+      this.ulElement.appendChild(liElement);
     });
-  });
+
+    const pendingTasks = theTodoList.filter((item) => item.isCompleted === false);
+    pendingSpan.innerText = pendingTasks.length + ' tasks left';
+  }
+}
+
+
 
 // ul connected to the task list
 const listSection = document.querySelector("#tasks");
 
 todoList = new todo_class(listSection);
 
-
 // task added in input box shows in task list
-document.querySelector(".addBtn").addEventListener("click", function(){
-    todoList.add()
-})
+document.querySelector(".addBtn").addEventListener("click", function () {
+  todoList.add();
+});
