@@ -18,23 +18,14 @@
         <ul id="tasks"></ul>
         <div class="filters">
           <span><span class="pending"></span> tasks left</span>
-          <button
-            class="btn filters__btn filters__btn--all"
-            v-on:click="filterTodos('all')"
-          >
-            All
+          <button class="Btn Btn--link js-filter-btn" data-filter="completed">
+            show completed
           </button>
-          <button
-            class="btn filters__btn filters__btn--complete"
-            v-on:click="filterTodos('complete')"
-          >
-            Active
+          <button class="Btn Btn--link js-filter-btn" data-filter="active">
+            show active
           </button>
-          <button
-            class="btn filters__btn filters__btn--incomplete"
-            v-on:click="filterTodos('incomplete')"
-          >
-            Complete
+          <button class="Btn Btn--link js-filter-btn" data-filter="all">
+            show all
           </button>
         </div>
       </div>

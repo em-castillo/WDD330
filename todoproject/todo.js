@@ -24,7 +24,6 @@ class todo_class{
         document.querySelector("#input").value = "";
         }
     }
-    showTasks()
 
     complete(x) {
         const selectIndex = theTodoList.findIndex((item) => item.id == x);
@@ -85,6 +84,22 @@ function showTasks(){
     pendingTasksNumb.textContent = theTodoList.length;
 }
 
+$FilterBtnCollection.forEach($filterBtn => {
+    $filterBtn.addEventListener('click', (event) => {
+      const filter = event.target.dataset.filter || 'all';
+      removeAllChildNodesFrom($todosList);
+      switch(filter) {
+        case 'completed':
+          filterList(todos, todosFragment, (todo) => todo.complete);
+          break;
+        case 'active':
+          filterList(todos, todosFragment, (todo) => !todo.complete);
+          break;
+        default:
+          filterList(todos, todosFragment, (todo) => todo);
+      }
+    });
+  });
 
 // ul connected to the task list
 const listSection = document.querySelector("#tasks");
