@@ -24,7 +24,7 @@ class todo_class{
         document.querySelector("#input").value = "";
         }
     }
-    showTasks();
+    showTasks()
 
     complete(x) {
         const selectIndex = theTodoList.findIndex((item) => item.id == x);
