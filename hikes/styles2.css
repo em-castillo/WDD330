@@ -15,20 +15,22 @@ main {
   margin: 3rem;
 }
 
-main h1 {
+ul {
+  padding: 0.5rem 2%;
+}
+
+main h1,
+h2 {
   text-align: center;
   border-style: solid;
   border-color: rgb(148, 199, 148);
   background-color: rgb(207, 228, 188);
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 h2 {
-  text-align: center;
-  border-style: solid;
   border-color: rgb(231, 220, 118);
   background-color: rgb(244, 245, 209);
-  padding: 0.5rem;
 }
 
 img {
