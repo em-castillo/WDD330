@@ -37,9 +37,9 @@ img {
   width: 100%;
 }
 
-.hidden {
+/* .hidden {
   display: none;
-}
+} */
 
 .light {
   display: flex;
