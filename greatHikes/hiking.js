@@ -1,7 +1,6 @@
+import hikeData from "./hikes.js"; 
+
 const imgBasePath = "//byui-cit.github.io/cit261/examples/";
-
-
-
 
 hikeList.forEach((hike, i) => {	
 	
