@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WDD330 Notes</title>
+
+    <style>
+      header,
+      footer {
+        background-color: rgb(243, 208, 167);
+        padding: 0.2rem;
+        text-align: center;
+        padding: 0.5rem 2%;
+        margin: auto;
+        border-radius: 15px;
+      }
+
+      body {
+        padding: 0.5rem 2%;
+      }
+
+      p {
+        line-height: 1.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="title">WDD 330</h1>
+    </header>
+
+    <h1>Week 7 Notes: Further Functions and AJAX</h1>
+
+    <h2>Function Properties and Methods</h2>
+    <p>- It also has length property like an array.</p>
+
+    <h3>Call and Apply Methods</h3>
+
+    <p>
+      - The call() method calls a function with a given this value and arguments
+      provided individually.<br />
+      - Apply() does the same but the argument goes like an array. Ex:
+      apply([argument]).
+    </p>
+    <p>
+      Example:<br />
+      function sayHello(){ <br />
+      return `Hello, my name is ${ this.name }`; } <br />
+      const clark = { name: 'Clark' }; <br />
+      sayHello.call(clark);<br />
+      << 'Hello, my name is Clark’
+    </p>
+    <h2>Immediately Invoked Function Expressions (IIFE)</h2>
+    <p>
+      - It is easily achieved by placing parentheses at the end of the function
+      definition (remember we use parentheses to invoke a function). The
+      function also has to be made into an expression, which is done by placing
+      the whole declaration inside parentheses.<
+    </p>
+    <p>
+      Example:<br />
+      (function(){ <br />
+      const temp = 'World'; console.log(`Hello ${temp}`); })();<br />
+      << 'Hello World'
+    </p>
+
+    <h2>Functions that Define and Rewrite Themselves</h2>
+    <p>
+      Example: <br />
+      function party(){<br />
+      console.log('Wow this is amazing!'); party = function(){ <br />
+      console.log('Been there, got the T-Shirt'); } <br />
+      }
+    </p>
+    <p>
+      Every time the function is called after the first time, it will log the
+      message “Been there, got the T-Shirt”:
+    </p>
+
+    <h2>Recursive Functions</h2>
+    <p>
+      - A recursive function is one that invokes itself until a certain
+      condition is met. Repeat itself.<br />
+      - It is used with formulas (numbers)
+    </p>
+
+    <p>
+      Example:<br />
+      function factorial(n) { if (n === 0) { <br />
+      return 1; }<br />
+      else {<br />
+      return n * factorial(n - 1); } <br />
+      }
+    </p>
+
+    <h3>Callback Promises</h3>
+    <p>
+      - A promise represents the future result of an asynchronous operation.
+      <br />
+      - When a promise is created, it calls an asynchronous operation and is
+      then said to be pending.<br />
+      - Once settled can result in two different outcomes: <br />
+      Resolved: the asynchronous operation was completed successfully.<br />
+      Rejected: the asynchronous operation didn’t work as expected, wasn’t
+      successfully completed or resulted in an error. <br />
+    </p>
+    <p>
+      Example:<br />
+      const promise = new Promise( (resolve, reject) => { // initialization code
+      goes here<br />
+      if (success) {<br />
+      resolve(value);}<br />
+      else {<br />
+      reject(error); }<br />
+      });
+    </p>
+
+    <h2>Closures</h2>
+    <p>
+      - A closure gives you access to an outer function’s scope from an inner
+      function. In JavaScript, closures are created every time a function is
+      created, at function creation time.
+    </p>
+
+    <p>
+      Example:<br />
+      function makeFunc() { <br />
+      var name = 'Mozilla';<br />
+      function displayName() {<br />
+      alert(name);}<br />
+      return displayName; }<br />
+      var myFunc = makeFunc();<br />
+      myFunc();
+    </p>
+
+    <h3>Generators</h3>
+    <p>
+      - A generator is created by placing an asterisk (*) after the function
+      keyword. <br />
+      - A generator function will return an iterator object that provides a
+      next() method, which returns the next value in a sequence that is defined
+      in the generator function.
+    </p>
+
+    <p>
+      Example:<br />
+      function* generator(i) {<br />
+      yield i;<br />
+      yield i + 10;}<br />
+      const gen = generator(10);<br />
+      console.log(gen.next().value); //expected output: 10<br />
+      console.log(gen.next().value); // expected output: 20
+    </p>
+
+    <h2>Functional Programming</h2>
+    <p>
+      - Functional programming involves breaking processes down into steps that
+      can be applied as a series of functions.
+    </p>
+
+    <h3>Pure Functions</h3>
+    <p>
+      - Pure functions are functions that don’t rely on the state of the code
+      they are called from, have no side-effects, and always give the same
+      result when given the same arguments (referential transparency). <br />
+      - The output should not change.
+    </p>
+
+    <h3>Currying</h3>
+    <p>
+      - Currying or partial application is the process of applying one argument
+      at a time to a function. A new function is returned until all the
+      arguments have been used. <br />
+      - It is a technique of simplifying a multi-valued argument function into
+      single-valued argument multi-functions.
+      <img src="currying.png" width="70%" />
+    </p>
+
+    <h2>AJAX</h2>
+    <p>
+      - Ajax is a technique that allows web pages to communicate asynchronously
+      with a server, and it dynamically updates web pages without reloading.
+      <br />
+      The data can be sent in many forms, but it is usually in JSON.
+    </p>
+    <p>An example of Ajax is the weather page created last semester.</p>
+
+    <h2>The Fetch API</h2>
+    <p>
+      - Ajax can be used for communicating with external APIs. Ajax requests can
+      be made using the Fetch API.
+    </p>
+
+    <p>
+      Example: <br />
+      fetch('https://example.com/data')<br />
+      then( // code that handles the response ) <br />
+      catch( // code that runs if the server returns an error )
+    </p>
+
+    <h3>Response Interface</h3>
+    <p>
+      - The Response interface allows you to control the response received from
+      a request or to create your own response objects.
+    </p>
+
+    <h3>AJAX</h3>
+    <p>
+      - The Request interface allows you to create a request object that
+      contains information about the request being made, such as the URL and
+      headers.
+      <br />
+      Requests can retrieve data using a GET request, or send data using a POST
+      request.
+    </p>
+
+    <h3>Headers Interface</h3>
+    <p>
+      - The Headers interface allows you to create HTTP headers that can be
+      added to a request or response object.
+    </p>
+
+    <h3>FormData</h3>
+    <p>
+      - The FormData interface makes it easier to send data from forms.
+      <br />
+      Helps to reduce the amount of code needed when submitting forms.
+    </p>
+
+    <footer>
+      <p id="copyright">
+        &copy; <span id="actualYear">2021</span> | Emily J. Castillo |
+        <a href="index.html">Home Page</a>
+      </p>
+    </footer>
+  </body>
+</html>

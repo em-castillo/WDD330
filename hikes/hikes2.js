@@ -160,4 +160,4 @@ const hikeList = [
   window.addEventListener('load', () => {
     myHikes.showHikeList();
   });
-  // myHikes.hikeList;
+  myHikes.hikeList;
