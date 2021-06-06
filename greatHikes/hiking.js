@@ -86,7 +86,6 @@ for (var i = 0; i < hikeItemList.length; i++) {
 
 function hikeDetail(x) {
 	
-	
 	for (var i = 0; i < hikeItemList.length; i++) {
  		if (document.getElementById('backButton') != null && document.querySelectorAll('.hidden').length == 2) {
 			return;
