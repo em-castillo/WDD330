@@ -15,6 +15,15 @@ main {
   margin: 3rem;
 }
 
+main h1,
+h2 {
+  text-align: center;
+  border-style: solid;
+  border-color: rgb(148, 199, 148);
+  background-color: rgb(207, 228, 188);
+  padding: 1rem 0;
+}
+
 h2 {
   border-color: rgb(231, 220, 118);
   background-color: rgb(244, 245, 209);
@@ -98,14 +107,14 @@ h2 {
 }
 
 .titleCardDetail {
-  float: left;
   margin: 0.5em;
-  background-color: blue;
+  padding: 5px;
 }
 
 body img {
-  max-width: 50%;
+  max-width: 60%;
   margin: 5px;
+  padding: 0 10px;
   float: left;
 }
 
@@ -121,8 +130,10 @@ body img {
 #backButton {
   position: absolute;
   top: 0;
-  left: 0;
-  color: lightgray;
+  left: 3px;
+  padding: 3px;
+  color: gray;
+  background-color: rgb(243, 208, 167);
   cursor: pointer;
   z-index: 1;
 }

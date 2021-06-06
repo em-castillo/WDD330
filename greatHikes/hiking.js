@@ -74,6 +74,7 @@ hikeList.forEach((hike, i) => {
 	commentSubmit.innerHTML = "Submit Comment";
 	commentSubmit.addEventListener('click', function() {saveComment(event)});
 	commentSection.appendChild(commentSubmit);
+	commentSubmit.style = "padding: 5px; background-color: aliceblue;"
 	
 });
 
@@ -96,9 +97,9 @@ function hikeDetail(x) {
 			x.firstChild.setAttribute('id', 'titleCardFocus')
 			details = x.querySelectorAll('.titleCardDetail');
 			
-			// create and display "view all" button
+			// create and display "all hikes" button
 			backButton = document.createElement('div');
-			backButton.innerHTML = "view all";
+			backButton.innerHTML = "Back to all hikes";
 			backButton.setAttribute('id', 'backButton');
 			x.appendChild(backButton);
 			backButton.addEventListener("click", function(e) {resetPage(e)})
