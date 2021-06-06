@@ -34,4 +34,4 @@ const hikeList = [
   }
 ];
 
-export default hikeList;
+// export default hikeList;

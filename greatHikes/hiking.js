@@ -1,8 +1,8 @@
-import hikeData from "./hikes.js"; 
+// import hikeData from "./hikes.js"; 
 
 const imgBasePath = "//byui-cit.github.io/cit261/examples/";
 
-hikeData.forEach((hike, i) => {	
+hikeList.forEach((hike, i) => {	
 	
 	// main container
 	let div = document.createElement('div');
@@ -54,13 +54,15 @@ hikeData.forEach((hike, i) => {
 	// comment name input
 	let nameInput = document.createElement('input');
 	nameInput.setAttribute('type', 'text');
-	nameInput.setAttribute('placeholder', 'Please enter your name');
+	nameInput.setAttribute('placeholder', 'Enter your name here.');
 	nameInput.classList.add('hidden');
 	nameInput.classList.add("titleCardDetail");
 	commentSection.appendChild(nameInput);
 	
 	// comment input
 	let commentInput = document.createElement('textarea');
+	commentInput.setAttribute('type', 'text');
+	commentInput.setAttribute('placeholder', 'Enter your comment here.');
 	commentInput.classList.add('hidden');
 	commentInput.classList.add("titleCardDetail");
 	commentSection.appendChild(commentInput);
