@@ -7,9 +7,9 @@ fetch(apiURL)
     })
     .then(function (object){
         // console.log(object);
-        let people = object.list;
+        let results = object.list;
 
-            for (i = 0; i < people.length; i++){
+            for (i = 0; i < results.length; i++){
         
                 let card = document.createElement('section');
                 let name = document.createElement('h3');
@@ -18,7 +18,9 @@ fetch(apiURL)
                 let height = document.createElement('p');
 
                 name.textContent = object.list[i].name;
-                console.log(name);
+                name.textContent = object.list[i].gender;
+                name.textContent = object.list[i].birth_year;
+                name.textContent = object.list[i].height;
 
             
                 card.append(name);
