@@ -1,4 +1,4 @@
-const apiURL = 'https://swapi.dev/api/people/1/';
+const apiURL = 'https://swapi.dev/api/people';
 
 fetch(apiURL)
     .then(function (data){
