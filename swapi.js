@@ -19,9 +19,9 @@ fetch(apiURL)
                 let height = document.createElement('p');
 
                 name.textContent = people.name;
-                name.textContent = people.gender;
-                name.textContent = people.birth_year;
-                name.textContent = people.height;
+                gender.textContent = people.gender;
+                birth.textContent = people.birth_year;
+                height.textContent = people.height;
 
             
                 const cards = document.querySelector('.cards');
