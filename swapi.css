@@ -22,8 +22,9 @@ body {
 }
 
 section {
-  border: 2px solid rgb(111, 78, 150);
+  border: 2px solid rgb(160, 128, 196);
   border-radius: 15px;
-  background: rgb(167, 153, 218);
+  background: rgb(196, 186, 230);
   padding-left: 0.5rem;
+  text-align: center;
 }
