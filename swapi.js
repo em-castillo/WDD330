@@ -6,7 +6,7 @@ fetch(apiURL)
 
     })
     .then(function (object){
-        // console.log(object);
+        console.log(object);
         //'results' is the array name
         let results = object['results'];
 
