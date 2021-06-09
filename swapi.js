@@ -24,6 +24,8 @@ fetch(apiURL)
                 name.textContent = people.height;
 
             
+                const cards = document.querySelector('.cards');
+                cards.append(card);
                 card.append(name);
                 card.append(gender);
                 card.append(birth);
