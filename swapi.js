@@ -17,14 +17,13 @@ fetch(apiURL)
                 let gender = document.createElement('p');
                 let birth = document.createElement('p');
                 let height = document.createElement('p');
-                let home = document.createElement('p');
+                
 
                 name.textContent = `${people.name}`;
                 gender.textContent = `Gender: ${people.gender}`;
                 birth.textContent = `Year of birth: ${people.birth_year}`;
                 height.textContent = `Height: ${people.height}`;
-                home.textContent = `Homeworld: ${people.homeworld}`;
-
+                
             
                 const cards = document.querySelector('.cards');
                 cards.append(card);
@@ -32,6 +31,6 @@ fetch(apiURL)
                 card.append(gender);
                 card.append(birth);
                 card.append(height);
-                card.append(home);
+                
         })
     })
