@@ -17,10 +17,10 @@ fetch(apiURL)
             let birth = document.createElement('p');
             let height = document.createElement('p');
 
-            name.textContent = person.name;
+            name.innerHTML = `${person.name}`;
             console.log(name);
 
             cards.append(card);
             card.append(name);
-        })
-    })
+        });
+    });
