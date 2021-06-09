@@ -7,20 +7,23 @@ fetch(apiURL)
     })
     .then(function (object){
         // console.log(object);
-        const people = object['people'];
-        const cards = document.querySelector('.cards');
+        const people = object.list;
 
-        people.forEach(person => {
-            let card = document.createElement('section');
-            let name = document.createElement('h3');
-            let gender = document.createElement('p');
-            let birth = document.createElement('p');
-            let height = document.createElement('p');
+            for (i = 0; i < people.length; i++){
+        
+                let card = document.createElement('section');
+                let name = document.createElement('h3');
+                let gender = document.createElement('p');
+                let birth = document.createElement('p');
+                let height = document.createElement('p');
 
-            name.innerHTML = `${person.name}`;
-            console.log(name);
+                name.textContent = object.list[i].name;
+                console.log(name);
 
-            cards.append(card);
-            card.append(name);
-        });
-    });
+            
+                card.append(name);
+                card.append(gender);
+                card.append(birth);
+                card.append(height);
+        }
+    })
