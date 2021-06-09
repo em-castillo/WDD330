@@ -33,7 +33,7 @@ fetch(apiURL)
                 card.append(height);
                 
         })
-        let button = document.createElement('div');
+        let button = document.createElement('button');
         button.innerHTML = "Next";
         cards.append(button);
         button.addEventListener("click", next);
