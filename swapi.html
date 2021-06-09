@@ -1,6 +1,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- this meta was added because 3rd party api was using http instead of https, so my request in the js is not blocked -->
     <meta
       http-equiv="Content-Security-Policy"
       content="upgrade-insecure-requests"
@@ -29,6 +30,9 @@
     <header>
       <h1 id="title">WDD 330</h1>
     </header>
+    <main>
+      <div class="cards"></div>
+    </main>
     <footer>
       <p id="copyright">
         &copy; <span id="actualYear">2021</span> | Emily J. Castillo |
