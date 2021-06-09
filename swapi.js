@@ -33,4 +33,8 @@ fetch(apiURL)
                 card.append(height);
                 
         })
+        let button = document.createElement('button');
+        card.append(button);
     })
+
+    
