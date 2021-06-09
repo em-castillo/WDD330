@@ -9,10 +9,11 @@ fetch(apiURL)
         console.log(object);
         //'results' is the array name
         let results = object['results'];
+        let card = document.createElement('section');
 
             results.forEach(people => {
         
-                let card = document.createElement('section');
+                
                 let name = document.createElement('h3');
                 let gender = document.createElement('p');
                 let birth = document.createElement('p');
@@ -33,8 +34,10 @@ fetch(apiURL)
                 card.append(height);
                 
         })
-        let button = document.createElement('button');
+        let button = document.createElement('div');
+        button.innerHTML = "Next";
         card.append(button);
+        button.addEventListener("click", function() {next()});
     })
 
     
