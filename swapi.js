@@ -7,7 +7,7 @@ fetch(apiURL)
     })
     .then(function (object){
         // console.log(object);
-        const people = object.list;
+        let people = object.list;
 
             for (i = 0; i < people.length; i++){
         
