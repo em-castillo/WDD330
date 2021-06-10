@@ -33,15 +33,11 @@ fetch(apiURL)
                 card.append(height);
                 
         })
-
-        if (results.next) {
-            console.log(next);
-
-        }
     })
 
 
 function next(e){
+    return apiURL.next;
     // const apiURL = '//swapi.dev/api/people/?page=2';
     // fetch(apiURL)
     //     .then(function(data){
