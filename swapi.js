@@ -40,8 +40,14 @@ fetch(apiURL)
 let page = 1;
 
 
-function next(e){
-    page++;
+function next(forward){
+    if (forward) {
+        page++;
+    }
+    else {
+        page--;
+    }
+
     const apiURL = '//swapi.dev/api/people/?page=' + page;
     fetch(apiURL)
         .then(function(data){
