@@ -39,7 +39,7 @@ fetch(apiURL)
 
 let page = 1;
 function next(number, pagenumber=page){
-    let reset = document.getElementsByClassName(".cards");
+    let reset = document.querySelector(".cards");
     while (reset.firstChild) {reset.removeChild(reset.lastChild)};
 
     //forward

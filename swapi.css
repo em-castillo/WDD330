@@ -28,3 +28,7 @@ section {
   padding-left: 0.5rem;
   text-align: center;
 }
+
+button {
+  align-items: center;
+}
