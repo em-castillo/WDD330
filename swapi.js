@@ -36,11 +36,13 @@ fetch(apiURL)
         let button = document.createElement('button');
         button.innerHTML = "Next";
         cards.append(button);
-        button.addEventListener("click", next);
+        button.addEventListener("click", function() {next(e)});
     })
 
-    const next = '//swapi.dev/api/people/?page=2';
-    fetch(next)
+
+function next(e)
+    const apiURL = '//swapi.dev/api/people/?page=2';
+    fetch(apiURL)
         .then(function(data){
             return data.json();
         })
