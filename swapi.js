@@ -40,7 +40,7 @@ fetch(apiURL)
     })
 
 
-function next(e)
+function next(e){
     const apiURL = '//swapi.dev/api/people/?page=2';
     fetch(apiURL)
         .then(function(data){
@@ -74,3 +74,4 @@ function next(e)
                     card.append(height);
         })
     })
+}
