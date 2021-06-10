@@ -33,10 +33,6 @@ fetch(apiURL)
                 card.append(height);
                 
         })
-        let button = document.createElement('button');
-        button.innerHTML = "Next";
-        cards.append(button);
-        button.addEventListener("click", function() {next(e)});
     })
 
 
