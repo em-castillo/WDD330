@@ -38,14 +38,21 @@ fetch(apiURL)
     })
 
 let page = 1;
+function next(number, pagenumber=page){
+    let reset = document.getElementsByClassName(".cards");
+    reset.innerHTML = "";
 
-
-function next(forward){
-    if (forward) {
+    //forward
+    if (number==1) {
         page++;
     }
-    else {
+    //backward
+    else if (number==2) {
         page--;
+    }
+    //custom page we choose
+    else if (number==0){
+        page=pagenumber;
     }
 
     const apiURL = '//swapi.dev/api/people/?page=' + page;
