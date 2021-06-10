@@ -33,12 +33,15 @@ fetch(apiURL)
                 card.append(height);
                 
         })
+
+        if (results.next) {
+            console.log(next);
+
+        }
     })
-let results = object['results'];
+
 
 function next(e){
-    const next = results.next;
-    console.log(next);
     // const apiURL = '//swapi.dev/api/people/?page=2';
     // fetch(apiURL)
     //     .then(function(data){
