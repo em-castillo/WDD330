@@ -10,6 +10,8 @@ fetch(apiURL)
         //'results' is the array name
         let results = object['results'];
         let cards = document.querySelector(".cards");
+        let next = results.next;
+        console.log(next);
 
             results.forEach(people => {
         
@@ -35,40 +37,42 @@ fetch(apiURL)
         })
     })
 
+let page = 1;
+
 
 function next(e){
-    return apiURL.next;
-    // const apiURL = '//swapi.dev/api/people/?page=2';
-    // fetch(apiURL)
-    //     .then(function(data){
-    //         return data.json();
-    //     })
-    //     .then(function(object){
-    //         console.log(object);
+    page++;
+    const apiURL = '//swapi.dev/api/people/?page=' + page;
+    fetch(apiURL)
+        .then(function(data){
+            return data.json();
+        })
+        .then(function(object){
+            console.log(object);
 
-    //         let results = object['results'];
-    //         let cards = document.querySelector(".cards");
+            let results = object['results'];
+            let cards = document.querySelector(".cards");
     
-    //             results.forEach(people => {
+                results.forEach(people => {
             
-    //                 let card = document.createElement('section');
-    //                 let name = document.createElement('h3');
-    //                 let gender = document.createElement('p');
-    //                 let birth = document.createElement('p');
-    //                 let height = document.createElement('p');
+                    let card = document.createElement('section');
+                    let name = document.createElement('h3');
+                    let gender = document.createElement('p');
+                    let birth = document.createElement('p');
+                    let height = document.createElement('p');
                     
     
-    //                 name.textContent = `${people.name}`;
-    //                 gender.textContent = `Gender: ${people.gender}`;
-    //                 birth.textContent = `Year of birth: ${people.birth_year}`;
-    //                 height.textContent = `Height: ${people.height}`;
+                    name.textContent = `${people.name}`;
+                    gender.textContent = `Gender: ${people.gender}`;
+                    birth.textContent = `Year of birth: ${people.birth_year}`;
+                    height.textContent = `Height: ${people.height}`;
                     
     
-    //                 cards.append(card);
-    //                 card.append(name);
-    //                 card.append(gender);
-    //                 card.append(birth);
-    //                 card.append(height);
-    //     })
-    // })
+                    cards.append(card);
+                    card.append(name);
+                    card.append(gender);
+                    card.append(birth);
+                    card.append(height);
+        })
+    })
 }
