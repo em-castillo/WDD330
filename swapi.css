@@ -32,3 +32,15 @@ section {
 .button {
   margin: 1rem 10%;
 }
+
+button {
+  padding: 0.3rem 0.5rem;
+}
+
+button:hover {
+  background-color: rgb(132, 144, 207);
+}
+
+button:active {
+  background-color: rgb(168, 116, 204);
+}
