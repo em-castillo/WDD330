@@ -42,11 +42,11 @@ function next(number, pagenumber=page){
     let reset = document.querySelector(".cards");
     while (reset.firstChild) {reset.removeChild(reset.lastChild)};
 
-    //forward
+    //forward button
     if (number==1) {
         page++;
     }
-    //backward
+    //backward button
     else if (number==2) {
         page--;
     }
