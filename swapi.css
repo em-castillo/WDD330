@@ -13,6 +13,10 @@ body {
   margin: auto;
 }
 
+h2 {
+  text-align: center;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -30,7 +34,7 @@ section {
 }
 
 .button {
-  margin: 1rem 29%;
+  margin: 1rem 25%;
 }
 
 button {
