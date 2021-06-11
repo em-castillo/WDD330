@@ -6,7 +6,7 @@ fetch(apiURL)
 
     })
     .then(function (object){
-        console.log(object);
+        // console.log(object);
         //'results' is the array name
         let results = object['results'];
         let cards = document.querySelector(".cards");
@@ -61,7 +61,7 @@ function next(number, pagenumber=page){
             return data.json();
         })
         .then(function(object){
-            console.log(object);
+            // console.log(object);
 
             let results = object['results'];
             let cards = document.querySelector(".cards");
