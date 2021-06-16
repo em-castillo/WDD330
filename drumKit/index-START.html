@@ -11,35 +11,35 @@
         <kbd>A</kbd>
         <span class="sound">clap</span>
       </div>
-      <div data-key="83" class="key">
+      <div data-key="83" class="key" onmousedown="hihat.play()">
         <kbd>S</kbd>
         <span class="sound">hihat</span>
       </div>
-      <div data-key="68" class="key">
+      <div data-key="68" class="key" onmousedown="kick.play()">
         <kbd>D</kbd>
         <span class="sound">kick</span>
       </div>
-      <div data-key="70" class="key">
+      <div data-key="70" class="key" onmousedown="openhat.play()">
         <kbd>F</kbd>
         <span class="sound">openhat</span>
       </div>
-      <div data-key="71" class="key">
+      <div data-key="71" class="key" onmousedown="boom.play()">
         <kbd>G</kbd>
         <span class="sound">boom</span>
       </div>
-      <div data-key="72" class="key">
+      <div data-key="72" class="key" onmousedown="ride.play()">
         <kbd>H</kbd>
         <span class="sound">ride</span>
       </div>
-      <div data-key="74" class="key">
+      <div data-key="74" class="key" onmousedown="snare.play()">
         <kbd>J</kbd>
         <span class="sound">snare</span>
       </div>
-      <div data-key="75" class="key">
+      <div data-key="75" class="key" onmousedown="tom.play()">
         <kbd>K</kbd>
         <span class="sound">tom</span>
       </div>
-      <div data-key="76" class="key">
+      <div data-key="76" class="key" onmousedown="tink.play()">
         <kbd>L</kbd>
         <span class="sound">tink</span>
       </div>
@@ -58,6 +58,22 @@
     <script>
       let clap = new Audio();
       clap.src = "sounds/clap.wav";
+      let hihat = new Audio();
+      clap.src = "sounds/hihat.wav";
+      let kick = new Audio();
+      clap.src = "sounds/kick.wav";
+      let openhat = new Audio();
+      clap.src = "sounds/openhat.wav";
+      let boom = new Audio();
+      clap.src = "sounds/boom.wav";
+      let ride = new Audio();
+      clap.src = "sounds/ride.wav";
+      let snare = new Audio();
+      clap.src = "sounds/snare.wav";
+      let tom = new Audio();
+      clap.src = "sounds/tom.wav";
+      let tink = new Audio();
+      clap.src = "sounds/tink.wav";
     </script>
   </body>
 </html>
