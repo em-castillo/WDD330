@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="keys">
-      <div data-key="65" class="key" onmousedown="clap.play()">
+      <div data-key="65" class="key">
         <kbd>A</kbd>
         <span class="sound">clap</span>
       </div>
@@ -56,25 +56,30 @@
     <audio data-key="76" src="sounds/tink.wav"></audio>
 
     <script>
-      let clap = new Audio();
-      clap.src = "sounds/clap.wav";
-      clap.currentTime = 0;
-      let hihat = new Audio();
-      hihat.src = "sounds/hihat.wav";
-      let kick = new Audio();
-      kick.src = "sounds/kick.wav";
-      let openhat = new Audio();
-      openhat.src = "sounds/openhat.wav";
-      let boom = new Audio();
-      boom.src = "sounds/boom.wav";
-      let ride = new Audio();
-      ride.src = "sounds/ride.wav";
-      let snare = new Audio();
-      snare.src = "sounds/snare.wav";
-      let tom = new Audio();
-      tom.src = "sounds/tom.wav";
-      let tink = new Audio();
-      tink.src = "sounds/tink.wav";
+      function sound() {
+        let audio = document.querySelector('[data-key="65"]');
+        audio.play();
+      }
+
+      // let clap = new Audio();
+      // clap.src = "sounds/clap.wav";
+      // clap.currentTime = 0;
+      // let hihat = new Audio();
+      // hihat.src = "sounds/hihat.wav";
+      // let kick = new Audio();
+      // kick.src = "sounds/kick.wav";
+      // let openhat = new Audio();
+      // openhat.src = "sounds/openhat.wav";
+      // let boom = new Audio();
+      // boom.src = "sounds/boom.wav";
+      // let ride = new Audio();
+      // ride.src = "sounds/ride.wav";
+      // let snare = new Audio();
+      // snare.src = "sounds/snare.wav";
+      // let tom = new Audio();
+      // tom.src = "sounds/tom.wav";
+      // let tink = new Audio();
+      // tink.src = "sounds/tink.wav";
     </script>
   </body>
 </html>
