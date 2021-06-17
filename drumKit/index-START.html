@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="keys">
-      <div data-key="65" class="key">
+      <div data-key="65" class="key" onmousedown="sound()">
         <kbd>A</kbd>
         <span class="sound">clap</span>
       </div>
@@ -58,7 +58,11 @@
     <script>
       function sound() {
         let audio = document.querySelector('[data-key="65"]');
-        audio.play();
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.currentTime = 0;
+        }
       }
 
       // let clap = new Audio();
