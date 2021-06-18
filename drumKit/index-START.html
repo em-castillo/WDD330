@@ -65,26 +65,24 @@
         path = src.getAttribute("src");
         var audio = new Audio(path);
 
-        if (e.keyCode == keyA) {
-          //ascii table on google
-          if (audio.paused) {
-            audio.play();
-            srcEl.classList.add("playing");
+        if (audio.paused) {
+          audio.play();
+          srcEl.classList.add("playing");
 
-            srcEl.style.marginTop =
-              parseInt(srcEl.style.marginTop.slice(0, -2)) + 10 + "px";
-            if (srcEl.style.marginTop == "110px") {
-              srcEl.style.marginTop = "10px";
-            }
-
-            var timer = setTimeout(function () {
-              srcEl.classList.remove("playing");
-            }, 1000);
-          } else {
-            audio.pause();
-            audio.currentTime = 0;
-            window.clearTimeout(timer);
+          if (src.style.marginTop == "") {
+            srcEl.style.marginTop = "10px";
           }
+          srcEl.style.marginTop =
+            parseInt(srcEl.style.marginTop.slice(0, -2)) + 10 + "px";
+          if (srcEl.style.marginTop == "110px") {
+            srcEl.style.marginTop = "10px";
+          }
+
+          var timer = setTimeout(function () {
+            srcEl.classList.remove("playing");
+          }, 1000);
+        } else {
+          audio.currentTime = 0;
         }
       }
     </script>
