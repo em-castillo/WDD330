@@ -60,11 +60,11 @@
       document.addEventListener("keypress", playAudio);
 
       function playAudio(e) {
-        srcList = document.querySelectorAll(`[data-key='${e.keyCode}']`);
-        srcEl = srcList[0];
-        src = srcList[1];
-        path = src.getAttribute("src");
-        var audio = new Audio(path);
+        let srcList = document.querySelectorAll(`[data-key='${e.keyCode}']`);
+        let srcEl = srcList[0];
+        let src = srcList[1];
+        let path = src.getAttribute("src");
+        let audio = new Audio(path);
 
         if (audio.paused) {
           audio.play();
@@ -79,7 +79,7 @@
             srcEl.style.marginTop = "10px";
           }
 
-          var timer = setTimeout(function () {
+          let timer = setTimeout(function () {
             srcEl.classList.remove("playing");
           }, 1000);
         } else {
