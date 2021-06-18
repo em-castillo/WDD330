@@ -7,45 +7,45 @@
   </head>
   <body>
     <div class="keys">
-      <div data-key="65" class="key" onmousedown="sound()">
+      <div data-key="65" class="key">
         <kbd>A</kbd>
         <span class="sound">clap</span>
       </div>
-      <div data-key="83" class="key" onmousedown="hihat.play()">
+      <div data-key="83" class="key">
         <kbd>S</kbd>
         <span class="sound">hihat</span>
       </div>
-      <div data-key="68" class="key" onmousedown="kick.play()">
+      <div data-key="68" class="key">
         <kbd>D</kbd>
         <span class="sound">kick</span>
       </div>
-      <div data-key="70" class="key" onmousedown="openhat.play()">
+      <div data-key="70" class="key">
         <kbd>F</kbd>
         <span class="sound">openhat</span>
       </div>
-      <div data-key="71" class="key" onmousedown="boom.play()">
+      <div data-key="71" class="key">
         <kbd>G</kbd>
         <span class="sound">boom</span>
       </div>
-      <div data-key="72" class="key" onmousedown="ride.play()">
+      <div data-key="72" class="key">
         <kbd>H</kbd>
         <span class="sound">ride</span>
       </div>
-      <div data-key="74" class="key" onmousedown="snare.play()">
+      <div data-key="74" class="key">
         <kbd>J</kbd>
         <span class="sound">snare</span>
       </div>
-      <div data-key="75" class="key" onmousedown="tom.play()">
+      <div data-key="75" class="key">
         <kbd>K</kbd>
         <span class="sound">tom</span>
       </div>
-      <div data-key="76" class="key" onmousedown="tink.play()">
+      <div data-key="76" class="key">
         <kbd>L</kbd>
         <span class="sound">tink</span>
       </div>
     </div>
 
-    <audio data-key="65" src="sounds/clap.wav"></audio>
+    <audio data-key="97" src="sounds/clap.wav"></audio>
     <audio data-key="83" src="sounds/hihat.wav"></audio>
     <audio data-key="68" src="sounds/kick.wav"></audio>
     <audio data-key="70" src="sounds/openhat.wav"></audio>
@@ -57,34 +57,19 @@
 
     <script>
       function sound() {
-        let audio = document.querySelector('[data-key="65"]');
-        if (audio.paused) {
-          audio.play();
-        } else {
-          audio.pause();
-          audio.currentTime = 0;
+        let audio = document.querySelectorAll(`[data-key='${e.keyCode}']`);
+        path = src[0].getAttribute("src");
+        var audio = new Audio(path);
+
+        if (e.keyCode == 97) {
+          //ascii
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.currentTime = 0;
+          }
         }
       }
-
-      let clap = new Audio();
-      clap.src = "sounds/clap.wav";
-      clap.currentTime = 0;
-      let hihat = new Audio();
-      hihat.src = "sounds/hihat.wav";
-      let kick = new Audio();
-      kick.src = "sounds/kick.wav";
-      let openhat = new Audio();
-      openhat.src = "sounds/openhat.wav";
-      let boom = new Audio();
-      boom.src = "sounds/boom.wav";
-      let ride = new Audio();
-      ride.src = "sounds/ride.wav";
-      let snare = new Audio();
-      snare.src = "sounds/snare.wav";
-      let tom = new Audio();
-      tom.src = "sounds/tom.wav";
-      let tink = new Audio();
-      tink.src = "sounds/tink.wav";
     </script>
   </body>
 </html>
