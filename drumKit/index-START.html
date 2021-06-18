@@ -57,7 +57,7 @@
     <audio data-key="keyL" src="sounds/tink.wav"></audio>
 
     <script>
-      document.addEventListener("keypress", playAudio);
+      document.addEventListener("keypress", playAudio(e));
 
       function playAudio(e) {
         let srcList = document.querySelectorAll(`[data-key='${e.keyCode}']`);
