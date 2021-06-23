@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WDD330 Notes</title>
+
+    <style>
+      header,
+      footer {
+        background-color: rgb(243, 208, 167);
+        padding: 0.2rem;
+        text-align: center;
+        padding: 0.5rem 2%;
+        margin: auto;
+        border-radius: 15px;
+      }
+
+      body {
+        padding: 0.5rem 2%;
+      }
+
+      p {
+        line-height: 1.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="title">WDD 330</h1>
+    </header>
+
+    <h1>Week 9 Notes</h1>
+
+    <h2>The Window Object</h2>
+    <p>- Alert: Window.alert(‘Hello’);</p>
+    <p>- Confirm: window.confirm(‘Do you want to quit?’);</p>
+    <p>
+      - Width and height: window.outerHeight; window.innerHeight;<br />
+      Outer: content, padding, border, margin.<br />
+      Inner: only content.
+    </p>
+    <p>- Location object: window.location;</p>
+    <p>- Redirect: window.location.href =’https://apple.com’</p>
+    <p>- Reload: window.location.reload();</p>
+    <p>- Browser and operating system: Window.navigator;</p>
+    <p>- History: window.history;</p>
+    <p>- Invoke a function after a set amount of time: Window.setTimeout();</p>
+    <p>- Repeatedly invoke a function: Window.setInterval();</p>
+    <p>- Optimized animation: Window.requestAnimationFrame();</p>
+    <p>
+      - Cookies can be used to store small pieces of information between
+      requests using the document.cookie property.
+    </p>
+
+    <h2>HTML5 APIs</h2>
+
+    <p>
+      - Data attribute: <br />
+      HTML:data-product-type=”” (data-anyname) <br />
+      JS:.dataset.productType
+    </p>
+    <p>- Get coordinates: Navigator.geolocation</p>
+    <p>- Web storage: localStorage.something</p>
+    <p>
+      - Web Workers: allow processes to be run in the background, adding support
+      for concurrency in JavaScript.
+      <br />
+      Example:<br />
+      var myWorker = new Worker("my_task.js");<br />
+      myWorker.addEventListener("message", function (oEvent) { <br />
+      console.log("Called back by the worker!\n");<br />
+      }, false);<br />
+      myWorker.postMessage(""); // start the worker.
+    </p>
+    <p>
+      - Web socket: allows two-way communication with a server – also known as
+      push messaging.
+      <br />
+      Example: <br />
+      var socket= new WebSocket("ws://www.example.com/webSocketserver.php");}
+    </p>
+
+    <p>- Multimedia: tag< audio src=”” controls> same with video.</p>
+
+    <p>- Progressive web application: small screen displays like an app</p>
+    <p>- Canvas and SVG: week 8</p>
+
+    <footer>
+      <p id="copyright">
+        &copy; <span id="actualYear">2021</span> | Emily J. Castillo |
+        <a href="index.html">Home Page</a>
+      </p>
+    </footer>
+  </body>
+</html>
