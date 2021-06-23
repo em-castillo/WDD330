@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WDD330 Notes</title>
+
+    <style>
+      header,
+      footer {
+        background-color: rgb(243, 208, 167);
+        padding: 0.2rem;
+        text-align: center;
+        padding: 0.5rem 2%;
+        margin: auto;
+        border-radius: 15px;
+      }
+
+      body {
+        padding: 0.5rem 2%;
+      }
+
+      p {
+        line-height: 1.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="title">WDD 330</h1>
+    </header>
+
+    <h1>Week 8 Notes: Chapter 8 and 12</h1>
+
+    <h2>CSS Transform</h2>
+    <p>Transform: rotate(45deg);</p>
+    <p>
+      Transform: scale(2)  to increase size by 2 or (0.5) decrease. <br />
+      It can also scale one side like a rectangle -> scaleX(2) scaleY(2)
+    </p>
+    <p>Transform: skewX(20deg) or skewY(20deg) -> like a diamond.</p>
+    <p>
+      Transform: translate(50px, 100px) -> move element. First is X, second is
+      Y.
+    </p>
+    <p>
+      Transform: matrix([scaleX], [skewY], [skewX], [scaleY] ,[translateX],
+      [translateY])
+    </p>
+
+    <h2>CSS Transition</h2>
+
+    <p>It needs a trigger to happen like hover.</p>
+    <p>Transition-property: width, all, none, height, etc.</p>
+    <p>Transition-duration: .5s;</p>
+    <p>Transition-timing-function: ease in, cubic-bezier(), linear,etc.</p>
+    <p>Transition-delay: 1s</p>
+    <p>Or Transition: all .5s linear 1s;</p>
+
+    <h2>HTML5 Canvas</h2>
+    <p>Images, video, and text.</p>
+    <p>
+      Create files.<br />
+      CSS: style with border, margin, etc to know where it is.<br />
+      HTML: canvas tags <br />
+      JS
+    </p>
+    <h3>Creating</h3>
+    <p>var canvas = document.querySelector(‘canvas’);</p>
+
+    <h3>Resizing</h3>
+    <p>Same size as screen</p>
+    <p>
+      Canvas.width = window.innerWidth;<br />
+      Canvas.height = window.innerHeight;
+    </p>
+
+    <h3>Drawing</h3>
+    <p>
+      Var context = canvas.getContext(‘2d’);<br />
+      Context.strokeStyle = ‘red’;<br />
+      Context.fillRect(x, y, width, height);<br />
+      Context.strokeRect(x, y, width, height);
+    </p>
+
+    <h2>SVG</h2>
+    <p>Learned in Advance CSS  rectangle, circle, polygon.</p>
+    <p>
+      svg viewBox=’ 0 0 100 100’<br />
+      rect x=’’ y=’’ width=’’ height=’’ fill=’’ stroke=’’ etc<br />
+      /svg
+    </p>
+
+    <h2>Drag and Drop</h2>
+    <p>HTML: draggable=’true’ -> inside an element with a class.</p>
+    <ul>
+      <li>
+        1. Set the draggable attribute on any HTML elements you’d like to be
+        draggable.
+      </li>
+      <li>
+        2. Add an event listener for the dragstart event on any draggable HTML
+        elements.
+      </li>
+      <li>
+        3. Add an event listener for the dragover and drop events on any
+        elements that you want to have accept dropped items.
+      </li>
+    </ul>
+    <img src="ddimg.png" />
+
+    <footer>
+      <p id="copyright">
+        &copy; <span id="actualYear">2021</span> | Emily J. Castillo |
+        <a href="index.html">Home Page</a>
+      </p>
+    </footer>
+  </body>
+</html>
