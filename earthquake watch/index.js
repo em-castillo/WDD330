@@ -1,6 +1,6 @@
 //Quakes module
 
-import QuakesController from "./quakeController.js";
+import QuakesController from "./QuakesController.js";
 
 const theQuakesController = new QuakesController();
 theQuakesController.init();
