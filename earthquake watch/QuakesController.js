@@ -1,8 +1,8 @@
 //glue between the model and view. Their job is to request information from the model when needed, and pass it on to the view to be displayed.
 
 import { getLocation } from './utilities.js';
-import Quake from './quakeModel.js';
-import QuakesView from './quakeView.js';
+import Quake from './Quake.js';
+import QuakesView from './QuakesView.js';
 
 // Quake controller
 export default class QuakesController {
