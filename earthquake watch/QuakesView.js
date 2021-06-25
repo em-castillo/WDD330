@@ -15,9 +15,8 @@ export default class QuakesView {
 
       listElement.innerHTML = quakeList.features
       .map(quake => {
-        return `<li data-id=${quake.id}>${quake.properties.title}, ${new Date(
-          quake.properties.time
-        )}</li>`;
+        return `<li data-id=${quake.id}>${quake.properties.title
+        }, ${new Date(quake.properties.time)}</li>`;
       })
       .join('');
     }
