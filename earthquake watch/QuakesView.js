@@ -14,11 +14,11 @@ export default class QuakesView {
       // }); 
 
       listElement.innerHTML = quakeList.features
-      .map(quake => {
-        return `<li data-id=${quake.id}>${quake.properties.title
-        }, ${new Date(quake.properties.time)}</li>`;
-      })
-      .join('');
+        .map(quake => {
+          return `<li data-id=${quake.id}>${quake.properties.title
+            }, ${new Date(quake.properties.time)}</li>`;
+          })
+        .join('');
     }
     renderQuake(quake, element) {
       const quakeProperties = Object.entries(quake.properties);
