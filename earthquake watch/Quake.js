@@ -13,7 +13,7 @@ export default class Quake {
   }
   async getEarthQuakesByRadius(position, radius = 100) {
     // use the getJSON function and the position provided to build out the correct URL to get the data we need.  Store it into this._quakes, then return it
-    this._quakes = getJSON(this.baseUrl + 
+    this._quakes = await getJSON(this.baseUrl + 
       `&starttime=2019-01-01&endtime=2019-03-02&latitude=${position.lat}
       &longitude=${position.lon}
       &maxradiuskm=${radius}`);
