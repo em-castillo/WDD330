@@ -28,13 +28,16 @@ export default class QuakesController {
   async initPos() {
     // if a position has not been set
     if (this.position.lat === 0) {
-      try {//write code
+      try {
         // try to get the position using getLocation()
+        //await operator is used to wait for a Promise. It can be used inside an Async block only
         const location = await getLocation();
-        console.log(location)
+        // console.log(location)
         
         // if we get the location back then set the latitude and longitude into this.position
-        
+        this.position.lat = location.coords.latitude;
+        this.position.lon =  location.coords.longitute;
+
       } catch (error) {
         console.log(error);
       }
@@ -59,6 +62,7 @@ export default class QuakesController {
   }
   async getQuakeDetails(quakeId) {
     // get the details for the quakeId provided from the model, then send them to the view to be displayed
-   //write code
+    const quake = this.quakes.getQuakeById(quakeId);
+    this.quakesView.renderQuake(quake, this.parentElement);
   }
 }
