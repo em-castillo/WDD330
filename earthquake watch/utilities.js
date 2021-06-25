@@ -4,8 +4,8 @@ export function getJSON(url) {
     return fetch(url)
     //.then() method call to process the response of your request.
       .then(function(response) {
-          //ok flag - more checking
         if (!response.ok) {
+          //ok flag - more checking
           throw Error(response.statusText);
         } else {
           //console.log(response.json());
@@ -17,12 +17,11 @@ export function getJSON(url) {
         console.log(error);
       });
   }
-
   //"Promisefied" version of the method to return the current location of the user.
   export const getLocation = function(options) {
     return new Promise(function(resolve, reject) {
-        // navigator.geolocation ask user's permission
-        // getCurrentPosition retrieves the device's current location.
+      // navigator.geolocation ask user's permission
+      // getCurrentPosition retrieves the device's current location.
       navigator.geolocation.getCurrentPosition(resolve, reject, options);
     });
   };

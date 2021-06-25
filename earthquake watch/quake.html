@@ -5,12 +5,28 @@
     <title>Local Quakes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
+      header,
+      footer {
+        background-color: rgb(243, 208, 167);
+        padding: 0.2rem;
+        text-align: center;
+        padding: 0.5rem 2%;
+        margin: auto;
+        border-radius: 15px;
+      }
+
+      body {
+        padding: 0.5rem 2%;
+        margin: auto;
+      }
+
       .quakeStyles {
         list-style-type: none;
         padding-left: 0;
       }
       .quakeStyles li {
         margin: 0.5em 0;
+        border-bottom: 1px solid black;
       }
       .quakeStyles div {
         font-size: 0.8em;
@@ -20,6 +36,8 @@
 
   <body>
     <header>
+      <h1 id="title">WDD 330</h1>
+
       <nav>
         <heading>
           <nav><ul id="mainNav"></ul></nav>
@@ -30,6 +48,12 @@
       <h1>Quake List</h1>
       <ul id="quakeList" class="quakeStyles"></ul>
     </main>
+    <footer>
+      <p id="copyright">
+        &copy; <span id="actualYear">2021</span> | Emily J. Castillo |
+        <a href="index.html">Home Page</a>
+      </p>
+    </footer>
 
     <script src="index.js" type="module"></script>
   </body>
