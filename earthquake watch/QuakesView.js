@@ -13,7 +13,7 @@ export default class QuakesView {
         listElement.appendChild(item);
       }); 
 
-      listElement.innerHTML = quakeList.
+      listElement.innerHTML = quakeList
         .map(quake => {
           return `<li data-id=${quake.id}>${quake.properties.title
             }, ${new Date(quake.properties.time)}</li>`;
