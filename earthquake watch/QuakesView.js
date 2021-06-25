@@ -4,7 +4,7 @@
 export default class QuakesView {
     renderQuakeList(quakeList, listElement) {
       // build a list of the quakes...include the title and time of each quake then append the list to listElement. You should also add the id of the quake record as a data- property to the li. ie. <li data-id="">
-      quakeList.forEach(element => {
+      quakeList.features.forEach(element => {
         const item = document.createElement('li');
         console.log(element);
         item.setAttribute('data-id', element.id);
@@ -13,7 +13,7 @@ export default class QuakesView {
         listElement.appendChild(item);
       }); 
 
-      listElement.innerHTML = quakeList
+      listElement.innerHTML = quakeList.features
         .map(quake => {
           return `<li data-id=${quake.id}>${quake.properties.title
             }, ${new Date(quake.properties.time)}</li>`;
