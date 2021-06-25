@@ -1,5 +1,8 @@
+//responsible to handle all of the interactions with our data source.
 import { getJSON } from "./utilities.js";
+
 // Quake Model
+// Class to represent Model
 export default class Quake {
   constructor() {
     this.baseUrl =
@@ -14,18 +17,19 @@ export default class Quake {
       `&latitude=${position.lat}&longitude=${position.lon}&maxradiuskm=${radius}`;
     console.log(query);
     this._quakes = await getJSON(query);
+
+    //this._quakes = await getJSON(
+        //   this.baseUrl +
+        //     `&starttime=2019-01-01&endtime=2019-03-02&latitude=${
+        //       position.lat
+        //     }&longitude=${position.lon}&maxradiuskm=${radius}`
+        // );
     return this._quakes;
   }
   getQuakeById(id) {
     // filter this._quakes for the record identified by id and return it
+    // return this._quakes.features.filter(item => item.id === id)[0];
   }
 }
 
-// this._quakes = await getJSON(
-//   this.baseUrl +
-//     `&starttime=2019-01-01&endtime=2019-03-02&latitude=${
-//       position.lat
-//     }&longitude=${position.lon}&maxradiuskm=${radius}`
-// );
 
-// return this._quakes.features.filter(item => item.id === id)[0];

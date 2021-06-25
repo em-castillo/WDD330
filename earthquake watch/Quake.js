@@ -1,7 +1,7 @@
 //responsible to handle all of the interactions with our data source.
 
 import { getJSON } from './utilities.js';
-// filter this._quakes for the record identified by id and return it
+
 // Quake Model
 //class to represent Model
 export default class Quake {

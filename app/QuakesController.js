@@ -1,3 +1,5 @@
+//glue between the model and view. Their job is to request information from the model when needed, and pass it on to the view to be displayed.
+
 import { getLocation } from './utilities.js';
 import Quake from './Quake.js';
 import QuakesView from './QuakesView.js';
@@ -28,7 +30,9 @@ export default class QuakesController {
     if (this.position.lat === 0) {
       try {
         // try to get the position using getLocation()
+        //await operator is used to wait for a Promise. It can be used inside an Async block only
         const posFull = await getLocation();
+        // console.log(location)
 
         // if we get the location back then set the latitude and longitude into this.position
         this.position.lat = posFull.coords.latitude;
@@ -41,6 +45,7 @@ export default class QuakesController {
   }
 
   async getQuakesByRadius(radius = 100) {
+    // this method provides the glue between the model and view. Notice it first goes out and requests the appropriate data from the model, then it passes it to the view to be rendered.
     //set a loading message in case it takes long to get the quakes
     this.parentElement.innerHTML = '<li>Loading...</li>';
     // get the list of quakes in the specified radius of the location
