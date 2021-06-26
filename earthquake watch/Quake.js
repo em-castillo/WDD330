@@ -24,7 +24,7 @@ export default class Quake {
     //           position.lat
     //         }&longitude=${position.lon}&maxradiuskm=${radius}`
     //     );
-    // return this._quakes;
+    return this._quakes;
   }
   getQuakeById(id) {
     // filter this._quakes for the record identified by id and return it
