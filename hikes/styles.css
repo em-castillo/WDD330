@@ -41,6 +41,7 @@ h2 {
 img {
   width: 100%;
 }
-button {
+
+.hidden {
   background-color: burlywood;
 }
