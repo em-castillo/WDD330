@@ -90,6 +90,7 @@ const hikeList = [
     buildBackButton() {
       const backButton = document.createElement("button");
       backButton.innerHTML = 'Back to All Hikes';
+      //change click instead of touchend(tap with finger) to work on computers too
       backButton.addEventListener('click', () => {
         this.showHikeList();
       });
