@@ -81,7 +81,7 @@ const hikeList = [
     // for the stretch you will need to attach a listener to each of the listed hikes to watch for a touchend. 
     const childrenArray = Array.from(this.parentElement.children);
     childrenArray.forEach(child => {
-      child.addEventListener('touchend', e => {
+      child.addEventListener('click', e => {
         // why currentTarget instead of target?
         this.showOneHike(e.currentTarget.dataset.name);
       });
@@ -90,7 +90,7 @@ const hikeList = [
     buildBackButton() {
       const backButton = document.createElement("button");
       backButton.innerHTML = 'Back to All Hikes';
-      backButton.addEventListener('touchend', () => {
+      backButton.addEventListener('click', () => {
         this.showHikeList();
       });
       backButton.classList.add('hidden');
