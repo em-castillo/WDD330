@@ -1,3 +1,29 @@
+export class Errors {
+  constructor(errorElementId) {
+    this.errorElement = document.getElementById(errorElementId);
+  }
+
+  handleError(error, callback) {
+    // parse out the error code from the error string
+    const code = error.message.substring(0, 3);
+    this.displayError(error);
+    // if it is something related to authentication then show the login form again.
+    if (code == 500 || code == 401) {
+      callback();
+    }
+    console.log(code);
+  }
+
+  displayError(error) {
+    this.errorElement.innerHTML = error.message;
+    this.errorElement.classList.remove('hidden');
+  }
+  clearError() {
+    this.errorElement.innerHTML = '';
+    this.errorElement.classList.add('hidden');
+  }
+}
+
 // Server Address
 const baseURL = 'http://127.0.0.1:3000/';
 // helper function to make an http request with fetch.

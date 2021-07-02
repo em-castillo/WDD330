@@ -4,14 +4,49 @@
     <meta charset="utf-8" />
     <title>Authentication with JWT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      header,
+      footer {
+        background-color: rgb(243, 208, 167);
+        padding: 0.2rem;
+        text-align: center;
+        padding: 0.5rem 2%;
+        margin: auto;
+        border-radius: 15px;
+      }
+
+      main {
+        padding: 0.5rem 2%;
+        padding-bottom: 1rem;
+      }
+
+      body {
+        padding: 0.5rem 2%;
+      }
+
+      input {
+        margin-right: 2rem;
+      }
+
+      p {
+        line-height: 1.5rem;
+      }
+
+      button {
+        background-color: beige;
+      }
+    </style>
   </head>
   <body>
+    <header>
+      <h1 id="title">WDD 330</h1>
+    </header>
     <main>
       <div id="errors" class="errors hidden"></div>
 
-      <h1>Week 11</h1>
+      <h2>Authentication with JWT</h2>
       <form>
-        <label for="name"><b>Username</b></label>
+        <label for="name"><b>Username:</b></label>
         <input
           id="username"
           type="text"
@@ -20,7 +55,7 @@
           required
         />
 
-        <label for="password"><b>Password</b></label>
+        <label for="password"><b>Password:</b></label>
         <input
           id="password"
           type="password"
@@ -32,6 +67,12 @@
         <button type="submit">Login</button>
       </form>
     </main>
+    <footer>
+      <p id="copyright">
+        &copy; <span id="actualYear">2021</span> | Emily J. Castillo |
+        <a href="index.html">Home Page</a>
+      </p>
+    </footer>
     <script src="week11.js" type="module"></script>
   </body>
 </html>
