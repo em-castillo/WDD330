@@ -46,7 +46,7 @@ export async function makeRequest(
   if (token) {
     options.headers.Authorization = `Bearer ${token}`;
   }
-  const response = await fetch(baseURL + 'posts');
+  const response = await fetch(baseURL + url, options);
   // in this case we are processing the response as JSON before we check the status. The API will send back more meaningful error messages than the default messages in the response, but we have to convert it before we can get to them.
   const data = await response.json();
 
