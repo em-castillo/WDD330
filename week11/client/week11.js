@@ -1,27 +1,29 @@
-import Auth from './auth.js';
-import { Errors, makeRequest } from './authHelpers.js';
+import Auth from "./auth.js";
+import { Errors, makeRequest } from "./authHelpers.js";
 // makeRequest('login', 'POST', {
 //   password: 'user1',
 //   email: 'user1@email.com'
 // });
 
-const myErrors = new Errors('errors');
+const myErrors = new Errors("errors");//new --> creating instances
 const myAuth = new Auth(myErrors);
 
-const loginForm = document.getElementById('login');
-loginForm.querySelector('button').addEventListener('click', () => {
+const loginForm = document.getElementById("login");
+
+loginForm.querySelector("button").addEventListener("click", () => {
   myAuth.login(getPosts);
 });
+//callback
 async function getPosts() {
   try {
-    const data = await makeRequest('posts', 'GET', null, myAuth.token);
+    const data = await makeRequest("posts", "GET", null, myAuth.token);
     // make sure the element is shown
-    document.getElementById('content').classList.remove('hidden');
+    document.getElementById("content").classList.remove("hidden");
     console.log(data);
-    var ul = document.getElementById('list');
-    ul.innerHTML = '';
+    var ul = document.getElementById("list");
+    ul.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
-      var li = document.createElement('li');
+      var li = document.createElement("li");
       li.appendChild(document.createTextNode(data[i].title));
       ul.appendChild(li);
     }
@@ -31,9 +33,11 @@ async function getPosts() {
     myErrors.handleError(error);
   }
 }
-document.getElementById('createSubmit').addEventListener('click', () => {
+
+document.getElementById("createSubmit").addEventListener("click", () => {
   createPost();
 });
+
 async function createPost() {
   const form = document.forms.postForm;
   console.dir(form);
@@ -41,18 +45,18 @@ async function createPost() {
     myErrors.clearError();
     const data = {
       title: form.title.value,
-      content: form.content.value
+      content: form.content.value,
     };
     try {
-      const res = await makeRequest('posts', 'POST', data, myAuth.token);
-      console.log('Post create:', data);
-      form.title.value = '';
-      form.content.value = '';
+      const res = await makeRequest("posts", "POST", data, myAuth.token);
+      console.log("Post create:", data);
+      form.title.value = "";
+      form.content.value = "";
       getPosts();
     } catch (error) {
       myErrors.handleError(error);
     }
   } else {
-    myErrors.displayError({ message: 'Title and Content are required' });
+    myErrors.displayError({ message: "Title and Content are required" });
   }
 }
