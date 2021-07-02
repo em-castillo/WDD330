@@ -35,7 +35,8 @@ export async function makeRequest(
   let options = {
     method: method,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     }
   };
   // if we are sending any data with the request add it here
