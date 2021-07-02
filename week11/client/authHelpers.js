@@ -1,4 +1,4 @@
-export class Errors {
+export default class Errors {
   constructor(errorElementId) {
     this.errorElement = document.getElementById(errorElementId);
   }
