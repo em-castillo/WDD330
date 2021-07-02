@@ -1,25 +1,27 @@
 //Auth class which provides basic JWT based authentication for our app.
 // Requires: access to the makeRequest function
-import { makeRequest } from './authHelpers.js';
+import { makeRequest } from "./authHelpers.js";
 
 export default class Auth {
   constructor(errorHandler) {
-    this.jwtToken = '';
+    this.jwtToken = "";
     this.user = {};
     this.errors = errorHandler;
   }
 
   async login(callback) {
-    const password = document.getElementById('password');
-    const username = document.getElementById('username');
+    const password = document.getElementById("password");
+    const username = document.getElementById("username");
     const postData = {
       email: username.value,
-      password: password.value
+      password: password.value,
     };
+
     try {
-      const data = await makeRequest('login', 'POST', postData);
+      const data = await makeRequest("login", "POST", postData);
       // a successful response...we have a token!  Store it since we will need to send it with every request to the API.
       this.jwtToken = data.accessToken;
+
       // let's get the user details as well and store them locally in the class
       this.user = await this.getCurrentUser(username.value);
       console.log(data);
@@ -27,11 +29,11 @@ export default class Auth {
       // hide the login form.
       hideLogin();
       // clear the password
-      password.value = '';
+      password.value = "";
       // clear any errors from the login process
       this.errors.clearError();
       // since we have a token let's go grab some data from the API
-      callback();
+      callback();//getPost function
     } catch (error) {
       // if there were any errors display them
       this.errors.handleError(error);
@@ -42,8 +44,8 @@ export default class Auth {
   async getCurrentUser(email) {
     try {
       const data = await makeRequest(
-        'users?email=' + email,
-        'GET',
+        "users?email=" + email,
+        "GET",
         null,
         this.jwtToken
       );
@@ -63,12 +65,12 @@ export default class Auth {
     this.user.age = 40;
     try {
       const result = await makeRequest(
-        'users/' + this.user.id,
-        'PUT',
+        "users/" + this.user.id,
+        "PUT",
         this.user,
         this.jwtToken
       );
-      console.log('Update user:', result);
+      console.log("Update user:", result);
     } catch (error) {
       this.errors.handleError(error, showLogin);
     }
@@ -83,9 +85,9 @@ export default class Auth {
 } // end auth class
 
 function showLogin() {
-  document.getElementById('login').classList.remove('hidden');
+  document.getElementById("login").classList.remove("hidden");
 }
 
 function hideLogin() {
-  document.getElementById('login').classList.add('hidden');
+  document.getElementById("login").classList.add("hidden");
 }

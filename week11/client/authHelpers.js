@@ -16,38 +16,37 @@ export class Errors {
 
   displayError(error) {
     this.errorElement.innerHTML = error.message;
-    this.errorElement.classList.remove('hidden');
+    this.errorElement.classList.remove("hidden");
   }
   clearError() {
-    this.errorElement.innerHTML = '';
-    this.errorElement.classList.add('hidden');
+    this.errorElement.innerHTML = "";
+    this.errorElement.classList.add("hidden");
   }
 }
-const baseURL = 'http://127.0.0.1:3000/';
+const baseURL = "http://127.0.0.1:3000/";
 // helper function to make an http request with fetch.
 // returns a promise to a json object
 export async function makeRequest(
   url,
-  method = 'GET',
+  method = "GET",
   body = null,
   token = null
 ) {
   let options = {
     method: method,
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*'
-    }
+      "Content-Type": "application/json",
+    },
   };
   // if we are sending any data with the request add it here
-  if (method == 'POST' || method == 'PUT') {
+  if (method == "POST" || method == "PUT") {
     options.body = JSON.stringify(body);
   }
   // if a token was passed in we should send it on.
   if (token) {
     options.headers.Authorization = `Bearer ${token}`;
   }
-  const response = await fetch(baseURL + url, options, { mode: 'no-cors'});
+  const response = await fetch(baseURL + url, options);
   // in this case we are processing the response as JSON before we check the status. The API will send back more meaningful error messages than the default messages in the response, but we have to convert it before we can get to them.
   const data = await response.json();
 

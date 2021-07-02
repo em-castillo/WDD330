@@ -53,6 +53,13 @@
       "userId": "user1@email.com",
       "createdAt": 1559159640285,
       "id": 12
+    },
+    {
+      "title": "Emily's Magazine",
+      "content": "Writing a new article",
+      "userId": "user1@email.com",
+      "createdAt": 1625199487808,
+      "id": 13
     }
   ]
 }
