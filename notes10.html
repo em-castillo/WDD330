@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WDD330 Notes</title>
+
+    <style>
+      header,
+      footer {
+        background-color: rgb(243, 208, 167);
+        padding: 0.2rem;
+        text-align: center;
+        padding: 0.5rem 2%;
+        margin: auto;
+        border-radius: 15px;
+      }
+
+      body {
+        padding: 0.5rem 2%;
+      }
+
+      p {
+        line-height: 1.5rem;
+      }
+
+      img {
+        width: 70%;
+        padding-bottom: 2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="title">WDD 330</h1>
+    </header>
+
+    <h1>Week 10 Notes</h1>
+
+    <h2>MDN: Validating forms</h2>
+    <h3>Form validation</h3>
+    <p>
+      When you enter data, the browser and/or the web server will check to see
+      that the data is in the correct format and within the constraints set by
+      the application.
+    </p>
+    <p>
+      - Client-side <br />
+      - Server-side
+    </p>
+    <h3>Types of client-side validation</h3>
+    <p>
+      <strong>Built-in form validation</strong> uses HTML5 form validation
+      features. Better performance.
+    </p>
+    <p>
+      Ex: required, minlength and maxlength, min and max, type, pattern.<br />
+      When is valid or invalid use CSS pseudo-class (:valid, :invalid).
+    </p>
+    <p>
+      <strong>JavaScript</strong> (customizable) uses a set of methods and
+      properties available on these DOM interfaces:
+    </p>
+    <p>- HTMLButtonElement (represents a button element)</p>
+    <p>- HTMLFieldSetElement (represents a fieldset element)</p>
+    <p>- HTMLInputElement (represents an input element)</p>
+    <p>- HTMLOutputElement (represents an output element)</p>
+    <p>- HTMLSelectElement (represents a select element)p></p>
+    <p>- HTMLTextAreaElement (represents a textarea element);</p>
+    <p>- Repeatedly invoke a function: Window.setInterval();</p>
+    <p>- Optimized animation: Window.requestAnimationFrame();</p>
+    <p>
+      Properties to use with the above elements:<br />
+      - validationMessage, validity, willValidate.
+    </p>
+    <p>
+      Methods to use:<br />
+      - checkValidity(), setCustomValidity(message).
+    </p>
+
+    <h2>MDN: Using Fetch</h2>
+    <h3>Supplying request options</h3>
+
+    <p>
+      The fetch() method can optionally accept a second parameter (first is
+      URL), an init object that allows you to control a number of different
+      settings.
+    </p>
+    <img src="fetch.png" alt="fetch example image" />
+
+    <footer>
+      <p id="copyright">
+        &copy; <span id="actualYear">2021</span> | Emily J. Castillo |
+        <a href="index.html">Home Page</a>
+      </p>
+    </footer>
+  </body>
+</html>
