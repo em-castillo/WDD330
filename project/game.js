@@ -10,7 +10,7 @@ gap = randomGap();
 //array of obstacles
 let gameObstacles = [];
 //obstacles colors
-let colors = ["ffd969","f66e69", "93d171", "81ccf8"];
+let colors = ["#ffd969","#f66e69", "#93d171", "#81ccf8"];
 
 let audio = document.getElementById("audio");
 let audio1 = document.getElementById("audio1");
@@ -56,7 +56,7 @@ let titleText = {
     y:50,
     update:function(text){
         //color
-        gameArea.context.fillStyle = "313030";
+        gameArea.context.fillStyle = "#313030";
         //size
         gameArea.context.font = "40px Delius";
         //typeface
@@ -70,7 +70,7 @@ let guideText = {
     y:100,
     update:function(text){
         //color
-        gameArea.context.fillStyle = "494747";
+        gameArea.context.fillStyle = "#494747";
         //size
         gameArea.context.font = "25px Play";
         //typeface
