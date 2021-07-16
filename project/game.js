@@ -1,14 +1,19 @@
 //Obstacles sizes and gap between them
 minHeight = 40;
 maxHeight = 100;
-minWidth = 30;
-maxWidth = 60;
+minWidth = 15;
+maxWidth = 25;
 minGap = 200;
 maxGap = 500;
 gap = randomGap();
 
 //array of obstacles
 let gameObstacles = [];
+//obstacles colors
+let colors = ["ffd969","f66e69", "93d171", "81ccf8"];
+
+let audio = document.getElementById("audio");
+let audio1 = document.getElementById("audio1");
 
 
 function startGame() {
@@ -28,6 +33,49 @@ function randomGap(){
 function jump(){
     //-2 moving x axis like jumping
     player.speedY = -2;
+    //jump audio
+    audio.play();
+}
+//game score display
+let scoreText = {
+    x:1000,
+    y:50,
+    update:function(text){
+        //color
+        gameArea.context.fillStyle = "gray";
+        //size
+        gameArea.context.font = "30px Consolas";
+        //typeface
+        gameArea.context.fillText(text, this.x, this.y);
+    }
+}
+
+//title
+let titleText = {
+    x:500,
+    y:50,
+    update:function(text){
+        //color
+        gameArea.context.fillStyle = "black";
+        //size
+        gameArea.context.font = "40px Delius";
+        //typeface
+        gameArea.context.fillText(text, this.x, this.y);
+    }
+}
+
+//instructions
+let guideText = {
+    x:350,
+    y:100,
+    update:function(text){
+        //color
+        gameArea.context.fillStyle = "black";
+        //size
+        gameArea.context.font = "25px Play";
+        //typeface
+        gameArea.context.fillText(text, this.x, this.y);
+    }
 }
 
 let player = {
@@ -35,6 +83,8 @@ let player = {
     y: 470,
     speedY:0,
     update: function(){
+        //player color
+        gameArea.context.fillStyle = "black";
         gameArea.context.fillRect(this.x, this.y, 30, 30);
     },
     //change y axis position
@@ -50,6 +100,13 @@ let player = {
             this.speedY = 0;
 
         }
+    },
+    //crashing obstacles
+    crashWith:function(obs){
+        if(this.x + 30 > obs.x && this.x < obs.x + obs.width && this.y + 30 > obs.y){
+            return true;
+        }
+        return false;
     }
 }
 
@@ -59,9 +116,14 @@ function obstacles(){
     this.width = Math.floor(minWidth + Math.random() * (maxWidth-minWidth + 1));
     this.x = 1200;
     this.y = gameArea.canvas.height - this.height;
+    //random index for colors
+    this.index = Math.floor (Math.random()*colors.length);
+    this.colors =  colors[this.index];
 
     //drawing the obstacles
     this.draw = function(){
+        //obstacle colors
+        gameArea.context.fillStyle =  this.colors;
         gameArea.context.fillRect(this.x, this.y, this.width, this.height);
     }
 
@@ -81,6 +143,10 @@ let gameArea = {
       this.context = this.canvas.getContext("2d");
       //frame counts how many times we run the updateGameArea
       this.frame = 0;
+      //score counter
+      this.score = 0;
+      //initail score
+      scoreText.update("Score: 0" );
       //5 miliseconds
       this.interval = setInterval(this.updateGameArea, 5);
       window.addEventListener("keydown", jump);
@@ -89,6 +155,14 @@ let gameArea = {
 
     //game area updated 
     updateGameArea: function () {
+        //check for a crash 
+        for(i=0; i<gameObstacles.length;i++){
+           if(player.crashWith(gameObstacles[i])){
+               gameArea.stop(); 
+             //exit update game area
+               return;
+           } 
+        }
         //clear the game area to start a new obstacle
         gameArea.clear();
         //new obstacle after a gap
@@ -111,6 +185,11 @@ let gameArea = {
         player.update();
         //increment frame
         gameArea.frame += 1;
+        //update score
+        gameArea.score += 0.01;
+        scoreText.update("Score: " + Math.floor(gameArea.score));
+        titleText.update("Jump It");
+        guideText.update("Press any key to jump over the obstacles.");
     },
 
     //area cleared
@@ -125,5 +204,16 @@ let gameArea = {
     },
 
     //stop game
-    stop: function () {},
+    stop: function () {
+        clearInterval(this.interval);
+        alert("GAME OVER :( \r\nReload to start again ;)");
+        audio1.play()
+    },
   };
+
+  //fonts
+  WebFont.load({
+    google: {
+        families: ["Delius", "Play"],
+    },
+});
