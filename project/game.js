@@ -56,7 +56,7 @@ let titleText = {
     y:50,
     update:function(text){
         //color
-        gameArea.context.fillStyle = "black";
+        gameArea.context.fillStyle = "313030";
         //size
         gameArea.context.font = "40px Delius";
         //typeface
@@ -70,7 +70,7 @@ let guideText = {
     y:100,
     update:function(text){
         //color
-        gameArea.context.fillStyle = "black";
+        gameArea.context.fillStyle = "494747";
         //size
         gameArea.context.font = "25px Play";
         //typeface
