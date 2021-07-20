@@ -61,6 +61,7 @@ function jump() {
   //jump audio
   jumping.play();
 }
+  
 //game score display
 let scoreText = {
   x: 1050,
@@ -243,7 +244,7 @@ let gameArea = {
   stop:  function () {
     clearInterval(this.interval);
     alert("GAME OVER :( \r\nReload to start again :D  ");
-    crash.play();
+    //  crash.play();
   },
 };
 
