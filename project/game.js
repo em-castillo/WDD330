@@ -51,7 +51,7 @@ function jump() {
 }
 //game score display
 let scoreText = {
-  x: 1000,
+  x: 1050,
   y: 50,
   update: function (text) {
     //color
@@ -79,13 +79,13 @@ let titleText = {
 
 //instructions
 let guideText = {
-  x: 250,
+  x: 200,
   y: 100,
   update: function (text) {
     //color
     gameArea.context.fillStyle = "#494747";
     //size
-    gameArea.context.font = "25px Play";
+    gameArea.context.font = "30px Play";
     //typeface
     gameArea.context.fillText(text, this.x, this.y);
   },
