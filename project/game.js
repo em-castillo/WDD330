@@ -13,12 +13,16 @@ let gameObstacles = [];
 //obstacles colors
 let colors = ["#ffd969", "#f66e69", "#93d171", "#81ccf8"];
 
-let audio = document.getElementById("audio");
-let audio1 = document.getElementById("audio1");
+let jumping = document.getElementById("jumping");
+let crash = document.getElementById("crash");
 
 const apiURL = "https://pokeapi.co/api/v2/pokemon/1";
 let imageUrl;
-let imageNode;
+let imageNode;  
+
+const musicURL = "https://open.spotify.com/track/69zAquXKL6nAjiKiHUaV8f?si=02adf85992014fd8";
+let gameMusic;
+
 
 
 function startGame() {
@@ -31,6 +35,14 @@ function startGame() {
         imageNode.src = imageUrl
         gameArea.start();
     });
+    // fetch(musicURL)
+    // .then((res) => res.json())
+    // .then((data) => {
+    //     mode:"no-cors";
+    //     gameMusic = new sound(musicURL);
+        
+    //     gameArea.start();
+    // });
 }
 
 function everyinterval(n) {
@@ -47,7 +59,7 @@ function jump() {
   //-2 moving x axis like jumping
   player.speedY = -2;
   //jump audio
-  audio.play();
+  jumping.play();
 }
 //game score display
 let scoreText = {
@@ -97,7 +109,7 @@ let player = {
   speedY: 0,
   update: function () {
     // drawImage(img, x, y, width, height)
-    gameArea.context.drawImage(imageNode, this.x, this.y - 20, 50, 50)
+    gameArea.context.drawImage(imageNode, this.x, this.y - 20, 50, 50) 
     //player color
     // gameArea.context.fillStyle = "black";
     // gameArea.context.fillRect(this.x, this.y, 50, 50);
@@ -126,6 +138,7 @@ let player = {
     }
     return false;
   },
+  
 };
 
 function obstacles() {
@@ -175,6 +188,7 @@ let gameArea = {
     this.interval = setInterval(this.updateGameArea, 5);
     window.addEventListener("keydown", jump);
     window.addEventListener("touchend", jump);
+    gameMusic.play();
   },
 
   //game area updated
@@ -182,6 +196,7 @@ let gameArea = {
     //check for a crash
     for (i = 0; i < gameObstacles.length; i++) {
       if (player.crashWith(gameObstacles[i])) {
+        crash.play();
         gameArea.stop();
         //exit update game area
         return;
@@ -225,10 +240,10 @@ let gameArea = {
   },
 
   //stop game
-  stop: function () {
+  stop:  function () {
     clearInterval(this.interval);
-    alert("GAME OVER :( \r\nReload to start again ;)");
-    audio1.play();
+    alert("GAME OVER :( \r\nReload to start again :D  ");
+    crash.play();
   },
 };
 
