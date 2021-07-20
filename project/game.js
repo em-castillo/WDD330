@@ -150,7 +150,7 @@ let gameArea = {
       //5 miliseconds
       this.interval = setInterval(this.updateGameArea, 5);
       window.addEventListener("keydown", jump);
-
+      window.addEventListener("touchend", jump);
     },
 
     //game area updated 
