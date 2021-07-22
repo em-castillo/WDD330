@@ -7,6 +7,9 @@ minGap = 200;
 maxGap = 350;
 gap = randomGap();
 
+//value undefined
+let lastScore;
+
 
 //array of obstacles
 let gameObstacles = [];
@@ -20,11 +23,6 @@ const apiURL = "https://pokeapi.co/api/v2/pokemon/1";
 let imageUrl;
 let imageNode;  
 
-const musicURL = "https://open.spotify.com/track/69zAquXKL6nAjiKiHUaV8f?si=02adf85992014fd8";
-let gameMusic;
-
-
-
 function startGame() {
 //get img before starting game
   fetch(apiURL)
@@ -35,14 +33,6 @@ function startGame() {
         imageNode.src = imageUrl
         gameArea.start();
     });
-    // fetch(musicURL)
-    // .then((res) => res.json())
-    // .then((data) => {
-    //     mode:"no-cors";
-    //     gameMusic = new sound(musicURL);
-        
-    //     gameArea.start();
-    // });
 }
 
 function everyinterval(n) {
@@ -61,30 +51,43 @@ function jump() {
   //jump audio
   jumping.play();
 }
-  
+
 //game score display
 let scoreText = {
-  x: 1050,
-  y: 50,
+  x: 990,
+  y: 40,
   update: function (text) {
     //color
     gameArea.context.fillStyle = "gray";
     //size
-    gameArea.context.font = "30px consola";
+    gameArea.context.font = "28px consola";
     //typeface
     gameArea.context.fillText(text, this.x, this.y);
   },
 };
 
+let highscoreText = {
+    x: 990,
+    y: 75,
+    update: function (text) {
+      //color
+      gameArea.context.fillStyle = "gray";
+      //size
+      gameArea.context.font = "28px consola";
+      //typeface
+      gameArea.context.fillText(text, this.x, this.y);
+    },
+  };
+
 //title
 let titleText = {
   x: 450,
-  y: 60,
+  y: 70,
   update: function (text) {
     //color
     gameArea.context.fillStyle = "#313030";
     //size
-    gameArea.context.font = "40px 'Press Start 2P'";
+    gameArea.context.font = "45px 'Press Start 2P'";
     //typeface
     gameArea.context.fillText(text, this.x, this.y);
   },
@@ -92,8 +95,20 @@ let titleText = {
 
 //instructions
 let guideText = {
-  x: 200,
-  y: 100,
+  x: 375,
+  y: 110,
+  update: function (text) {
+    //color
+    gameArea.context.fillStyle = "#494747";
+    //size
+    gameArea.context.font = "30px Play";
+    //typeface
+    gameArea.context.fillText(text, this.x, this.y);
+  },
+};
+let guideText2 = {
+  x: 420 ,
+  y: 150,
   update: function (text) {
     //color
     gameArea.context.fillStyle = "#494747";
@@ -169,12 +184,14 @@ let gameArea = {
 
   //beginning of game
   start: function () {
+    //JSON.parse covert to object again
+    // if lastScore is null returns 0
+    lastScore = JSON.parse(localStorage.getItem('score')) || 0;
     //size 500/1200parts
     this.canvas.height = 500;
     this.canvas.width = 1200;
     //100% width
     this.canvas.style.width = "100%";
-
     //add canvas to body
     document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     //context allows to draw
@@ -183,13 +200,14 @@ let gameArea = {
     this.frame = 0;
     //score counter
     this.score = 0;
-    //initail score
-    scoreText.update("Score: 0");
+    this.highscore = 0;
+    //initial score
+    scoreText.update("Your Score: 0");
+    highscoreText.update("Highest Score: 0");
     //5 miliseconds
     this.interval = setInterval(this.updateGameArea, 5);
     window.addEventListener("keydown", jump);
     window.addEventListener("touchend", jump);
-    gameMusic.play();
   },
 
   //game area updated
@@ -200,7 +218,7 @@ let gameArea = {
         crash.play();
         gameArea.stop();
         //exit update game area
-        return;
+        return;  
       }
     }
     //clear the game area to start a new obstacle
@@ -227,10 +245,15 @@ let gameArea = {
     gameArea.frame += 1;
     //update score
     gameArea.score += 0.01;
-    scoreText.update("Score: " + Math.floor(gameArea.score));
-    titleText.update("Jump It");
+    gameArea.highscore += 0.01;
+    scoreText.update("Your Score: " + Math.floor(gameArea.score));
+    highscoreText.update("Highest Score: " + lastScore);
+    titleText.update("Jumpmon");
     guideText.update(
-      "Touch the screen or press any key to jump over the obstacles."
+      "Touch the screen or press any key"
+    );
+    guideText2.update(
+      "to jump over the obstacles."
     );
   },
 
@@ -242,9 +265,17 @@ let gameArea = {
 
   //stop game
   stop:  function () {
+    //only saves if current score (gameArea.score) is higher
+    if(gameArea.score > lastScore){
+      lastScore = Math.floor(gameArea.score);
+      //set => save / JSON.stringify => convert to string to save.
+      localStorage.setItem('score', JSON.stringify(lastScore));
+    }
+
     clearInterval(this.interval);
-    alert("GAME OVER :( \r\nReload to start again :D  ");
+    alert("GAME OVER :( \r\nReload to start again :D");
     //  crash.play();
+
   },
 };
 
