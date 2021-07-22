@@ -54,7 +54,7 @@ function jump() {
 
 //game score display
 let scoreText = {
-  x: 990,
+  x: 980,
   y: 40,
   update: function (text) {
     //color
@@ -67,7 +67,7 @@ let scoreText = {
 };
 
 let highscoreText = {
-    x: 990,
+    x: 980,
     y: 75,
     update: function (text) {
       //color
